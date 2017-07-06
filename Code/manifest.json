@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    
+    "name": "ACBrewingCalculator",
+    "description": "This extension provides an easy-access calculator for brewers",
+    "version": "0.1",
+    
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Click Here!"
+    },
+
+    "permissions": [
+        "activeTab",
+        "https://ajax.googleapis.com/"
+    ]
+}
