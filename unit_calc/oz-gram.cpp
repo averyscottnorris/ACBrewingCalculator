@@ -10,8 +10,11 @@ using namespace std;
 
 int main()
 {
-	//this will hold the users answer for the desired cnversion type
+	//c_type holds the type of converstion desired, s_unit is the source unit and d_unit is the desired unit
 	char c_type;
+	int s_unit, d_unit;
+	s_unit = 0;
+	d_unit = 0;
 	cout << "Do you want Metric to Ounces to grams (O) or Grams to Ounce (G)? (O/G): ";
 	cin >> c_type;
 	//ignoring additional input beyond the first character
@@ -32,18 +35,43 @@ int main()
 		c_type = tolower(c_type);
 		//returning the choice
 		cout << "\nType: " << c_type << '\n';
-		if(c_type == q)
+		if(c_type == 'q')
 			return 0;	
 	}
 	
 	if(c_type == 'o')
 	{
-		//if the user has chosen to convert ounces to grams
-		
-		
+		cout << "\nHow many ounces do you have?: ";
+		while(!(cin >> s_unit))
+		{
+			cin.clear();
+			cin.ignore(100, '\n');
+			cout << "Invalid input, try again: ";
+		}
+		d_unit = s_unit * 28;
+		cout << "You have " << d_unit << " Grams.";
+	}
+	
+	if(c_type == 'g')
+	{
+		cout << "\nHow many grams do you have?: ";
+		while(!(cin >> s_unit))
+		{
+			cin.clear();
+			cin.ignore(100, '\n');
+			cout << "Invalid input, try again: ";
+		}
+		d_unit = s_unit/28;
+		cout << "You have " << d_unit << " Ounces.";
 	}
 	
 	
+	
+	return 0;
 }
+	
+
+
+	
 
 
