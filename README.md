@@ -16,3 +16,21 @@
 
 # ACBrewingCalculator
 Google Chrome extension that provides brewers with a brewing calculator
+
+#Cody + Avery
+We have done some work on the layout of how are program will work. We
+pland to have this as an extension for chrome. We plan to have some 
+simple calculators work in a drop downlist and display in the drop down
+while larger/more complicated calculators will open a new window in a
+seperate website, use Javascript to interface with the user and run CGIs.
+
+# Third week update Cody Leytham
+I am working on the .cpp files that will be converted into the .cgi files
+for the Javascript to invoke.
+
+I have currently wrote very little code but given the nature of my taks
+ (writing the .cpp files for the calculators/convertors) right now I am
+doing more on researching and planning out the formulas. Once I get all
+of this down on paper it will probably take little time to code. It will
+mostly be getting data from a user, then doing the calculation and returning
+the values. So I have done more work that it appears in the files.
