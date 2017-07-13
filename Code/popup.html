@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
- ACBrewing Calculator Copyright (c) Avery Norris and Cody Leytham 2017   
+ ACBrewing Calculator Copyright (c) 2017 Avery Norris and Cody Leytham
  
  ACBrewingCalculator is a Google Chrome extension that gives the user
  easy access to general brewing tools.
@@ -26,6 +26,7 @@
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
       }
+      /*#status taken from developer.chrome.com/extensions sample code*/
       #status {
         /* avoid an excessively wide status text */
         white-space: pre;
@@ -35,16 +36,12 @@
       }
       table, th, td {
           border: 1px solid black;
-          border-collapse: collapse;
+      }
+      th, td {
+          padding: 15px;
       }
     </style>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     --> 
     <script src="popup.js"></script>
   </head>
   <body>
@@ -61,8 +58,14 @@
           <tr>
               <th><a href="" target="new">Alcohol Calculator</a></th>
           </tr>
+          <tr>
+              <th><a href="" target="new">Hydrometer Adjustment</a></th>
+          </tr>
+          <tr>
+              <th><a href="" target="new">Priming Sugar</a></th>
+          </tr>
       </table>
-      <font size="-5">Copyright (c) Avery Norris and Cody Leytham 2017</font>
+      <font size="1">Copyright (c) 2017 Avery Norris and Cody Leytham</font>
   </body>
 </html>
 

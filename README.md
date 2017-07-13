@@ -42,3 +42,9 @@ the values. So I have done more work that it appears in the files.
 I've got a basic framework for the chrome extension put together, and 
 have the html for the UI started. Still working on the HTML/CSS side of
 things to try and make the UI prettier.
+
+
+<div>Icons made by
+ <a href="http://www.flaticon.com/authors/nas-ztudio" title="Nas Ztudio">Nas Ztudio</a> from 
+ <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by 
+ <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
