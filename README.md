@@ -24,7 +24,8 @@ simple calculators work in a drop downlist and display in the drop down
 while larger/more complicated calculators will open a new window in a
 seperate website, use Javascript to interface with the user and run CGIs.
 
-# Third week update Cody Leytham
+# Third week update 
+------Cody Leytham------
 I am working on the .cpp files that will be converted into the .cgi files
 for the Javascript to invoke.
 
@@ -34,3 +35,8 @@ doing more on researching and planning out the formulas. Once I get all
 of this down on paper it will probably take little time to code. It will
 mostly be getting data from a user, then doing the calculation and returning
 the values. So I have done more work that it appears in the files.
+
+------Avery Norris------
+I've got a basic framework for the chrome extension put together, and 
+have the html for the UI started. Still working on the HTML/CSS side of
+things to try and make the UI prettier.
