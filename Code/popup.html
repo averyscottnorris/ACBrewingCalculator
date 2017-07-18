@@ -1,17 +1,33 @@
 <!doctype html>
 <!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
+ ACBrewing Calculator Copyright (c) 2017 Avery Norris and Cody Leytham
+ 
+ ACBrewingCalculator is a Google Chrome extension that gives the user
+ easy access to general brewing tools.
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>ACBrewingCalculator</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+        width: 170px;
       }
+      /*#status taken from developer.chrome.com/extensions sample code*/
       #status {
         /* avoid an excessively wide status text */
         white-space: pre;
@@ -19,19 +35,38 @@
         overflow: hidden;
         max-width: 400px;
       }
+      table, th, td {
+          border: 1px solid black;
+      }
+      th, td {
+          padding: 10px;
+      }
     </style>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="status"></div>
-    <img id="image-result" hidden>
+      <table>
+          <tr>
+              <th><a href="" target="new"><button>Gravity Estimator</button></a></th>
+          </tr>
+          <tr>
+              <th><a href="" target="new"><button>IBU Calculator</button></a></th>
+          </tr>
+          <tr>
+              <th><a href="" target="new"><button>Unit Conversion</button></a></th>
+          </tr>
+          <tr>
+              <th><a href="" target="new"><button>Alcohol Calculator</button></a></th>
+          </tr>
+          <tr>
+              <th><a href="" target="new"><button>Hydrometer Adjustment</button></a></th>
+          </tr>
+          <tr>
+              <th><a href="" target="new"><button>Priming Sugar</button></a></th>
+          </tr>
+      </table>
+      <font size="1">Copyright (c) 2017 Avery Norris and Cody Leytham</font>
   </body>
 </html>
 

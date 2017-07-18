@@ -6,10 +6,14 @@
     "version": "0.1",
     
     "browser_action": {
-        "default_icon": "icon.png",
+        "default_icon": "icon16.png",
         "default_popup": "popup.html",
-        "default_title": "Click Here!"
+        "default_title": "AC Brewing Calculator"
     },
+
+    "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png" },
 
     "permissions": [
         "activeTab",
