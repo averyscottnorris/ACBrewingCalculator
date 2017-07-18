@@ -23,14 +23,13 @@ using namespace std;
 
 
 int main(){
-	double orig_pH, targ_pH, change_pH;
+	double orig_pH, targ_pH, change_pH, HSO;
 	int start, end;
 	char * in_str, * REQUEST;
 	orig_pH = 0;
 	targ_pH = 0;
 	start = 0;
 	end = 0;
-	
 	in_str = new char[100];
 	REQUEST = new char[100];
 	
@@ -66,9 +65,19 @@ int main(){
 	orig_pH = pow(10, -orig_pH);
 	targ_pH = pow(10, -targ_pH);
 	change_pH = orig_pH - targ_pH;
-	cout << "<p>Orig Molarity: " << orig_pH << " Target Molarity: " << targ_pH << " change in pH is: " <<
-	 change_pH << "</p>";
-	start = end+1; 
+	cout << "<p>Orig Molarity: " << orig_pH << " Target Molarity: " << targ_pH << " change in Molarity H+ is: " <<
+	change_pH << "</p>";
+	
+	
+	cout << "To get this change you can use:";
+	//calculating the grams of sulfuric acid (H2SO4) needed to nutralize the alkalinity.
+	HSO = change_pH;
+	//there are 2 H+ for every mole of H2SO4, so dividing the moles of H+ by to to get
+	//the moles of H2SO4 needed to get the required H+. Then multiplying that by the molar
+	//mass of H2SO4 to get the mass of it needed.
+	HSO = HSO/2;
+	HSO = HSO*98;
+	cout << "\n\t->!FOOD GRADE!<- SULFUIRC ACID...: " << HSO << " grams.\n";
 	delete [] in_str;
 
 	return 0; 
