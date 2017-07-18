@@ -43,7 +43,18 @@ I've got a basic framework for the chrome extension put together, and
 have the html for the UI started. Still working on the HTML/CSS side of
 things to try and make the UI prettier.
 
+Limitations
+	this is an unfinished product and limitations are unknown but 
+	for many of the applications, it will be limited to realistic
+	values and data. Ex: dont use unrealisticly small pH values
+	on the pH adjustment calculator. There is also rounding that
+	assumed there is a realistic margin of error. Ex: the pH
+	calculator rounds 5 gallons up to 20 liters from 18.9 incurring
+	a 5.5% error wich is acceptable in home brewing.
 
+
+Languages
+	c++, Javascript, HTML.
 <div>Icons made by
  <a href="http://www.flaticon.com/authors/nas-ztudio" title="Nas Ztudio">Nas Ztudio</a> from 
  <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by 
