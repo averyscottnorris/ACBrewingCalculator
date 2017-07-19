@@ -21,9 +21,10 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 
 using namespace std;
 
+double dilute_sol(double molarity, double unit, double sample);
 
 int main(){
-	double orig_pH, targ_pH, change_pH, HSO;
+	double orig_pH, targ_pH, change_pH, HSO, sol_val, pure_acid, dil_acid;
 	int start, end;
 	char * in_str, * REQUEST;
 	orig_pH = 0;
@@ -74,14 +75,39 @@ int main(){
 	
 	cout << "To get this change you can use:";
 	//calculating the grams of sulfuric acid (H2SO4) needed to nutralize the alkalinity.
-	HSO = change_pH;
+	pure_acid = change_pH;
 	//there are 2 H+ for every mole of H2SO4, so dividing the moles of H+ by to to get
 	//the moles of H2SO4 needed to get the required H+. Then multiplying that by the molar
 	//mass of H2SO4 to get the mass of it needed.
-	HSO = HSO/2;
+	HSO = pure_acid/2;
 	HSO = HSO*98;
-	cout << "\n\t->!FOOD GRADE!<- pure SULFUIRC ACID...: " << HSO << " grams.\n";
+	cout << "<p>\t->!FOOD GRADE!<- pure SULFUIRC ACID...: " << HSO << " grams.<br> </p>" <<
+	"<p>\t\t Some diluter calculations </p>" << "<p>\t\t\t.001M " << dilute_sol (.001, .001, pure_acid) << " ML</p>";
+	
+	
 	delete [] in_str;
+	
 
 	return 0; 
+}
+
+
+double dilute_sol(double molarity, double unit, double sample){
+	//this function takes in a molarity of solution and a unit (divion of a liter)
+	//and then tells how many units of the diluted solution is needed
+	//ex a molarity of .1 is .1 moles a liter, a unit of .001 would be a mili liter
+	//sample is the sample (in molarity) that we are trying to neutralize
+	
+	//Ex dilute_sol(.01, .001, .0000034) means you are trying to neutralize 
+	//3.4x10^-6 moles of base using a solution that is .01 molarity and you want
+	//the answer in mili liters
+	double offset;
+	//offset will be how the desimal on the smaple is sifter
+	//since increasing the molarity means there is more moles per liter, that will sift the
+	//decimal to the right, reducing the molarity will shift it to the left
+	//similar logic for the liters, larger units means more moles per unit, smaller=fewer
+	offset = 1/unit;
+	offset = offset * (1/molarity);
+	sample = sample * offset;
+	return sample;
 }
