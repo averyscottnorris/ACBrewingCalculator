@@ -40,8 +40,8 @@ int main(){
   strncpy(REQUEST, getenv("QUERY_STRING"),59);
 	
 	cout << "<p>\nThis program will calculate the amount of Calcium or Magnesium needed to raise the pH of brewing water." <<
-	" This calculator rounds 5 gallons up to 20 liters from 18.9, this beign 5.5% off. It also assumes that" <<
-	" the liquid is at 72 derees fahrenheit (room temp).";
+	" This calculator return the adjustments in AMOUNT PER LITER it is not for a typical 5 gallon batch.<br> For reference " <<
+	"5 gallons about 18.9 liters";
 
 	//gets the starting position in the string for the input and stores it in start
 	start = strcspn(REQUEST, "=");
