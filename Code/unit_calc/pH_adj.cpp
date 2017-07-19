@@ -65,6 +65,9 @@ int main(){
 	orig_pH = pow(10, -orig_pH);
 	targ_pH = pow(10, -targ_pH);
 	change_pH = orig_pH - targ_pH;
+	//swiching the sign since an reduction on pH means an increase in H+. I know i could wsitch the orig_pH - targ_pH
+	//around but thisseems a little easier to folow with the math.
+	change_pH = -change_pH;
 	cout << "<p>Orig Molarity: " << orig_pH << " Target Molarity: " << targ_pH << " change in Molarity H+ is: " <<
 	change_pH << "</p>";
 	
@@ -77,7 +80,7 @@ int main(){
 	//mass of H2SO4 to get the mass of it needed.
 	HSO = HSO/2;
 	HSO = HSO*98;
-	cout << "\n\t->!FOOD GRADE!<- SULFUIRC ACID...: " << HSO << " grams.\n";
+	cout << "\n\t->!FOOD GRADE!<- pure SULFUIRC ACID...: " << HSO << " grams.\n";
 	delete [] in_str;
 
 	return 0; 
