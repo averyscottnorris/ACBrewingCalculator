@@ -1,16 +1,54 @@
-<!DOCTYPE htl>
+<!DOCTYPE html>
 <html>
 <body>
 
 <h3>testing stuff<h3>
 
+<script>
+function pH_diff(){
+	var o_ph = document.getElementById("o_ph").value; 
+	var t_ph = document.getElementById("t_ph").value;
+	var m_mass = document.getElementById("m_mass").value;
+	var h_count = document.getElementById("h_count").value;
+	 
+	var c = document.getElementById("c").checked; 
+	var f = document.getElementById("f").checked; 
+/*
+	CALCULATION EXPLENATION. 
+	FIRST: DETERMINING HOW MANY MOLES OF BASE I WILL NEED TO NEUTRALIZE. MOLES H+ = 10^(-pH). SO
+	TARGET pH - ORIGINAL pH = NUMBER OF H+ TO GET TO HE DESIRED pH.
+	
+	SECOND: DETERMINING HOW MANY MOLES OF THE ADDITIVE IS NEEDED TO NEUTRALIZE THE pH. SINCE ONE 
+	MOLE OF THE ADDITIVE CAN HAVE MORE THAN ONE H+ THUS ONE MORE OF ADDITIVE NEUTRALIZING MORE 
+	THAN ONE MOLE OF BASE, DIVIDE THE NEEDED MOLES OF H+ BY HOW MANY H+ THE ADDITIVE HAS. WITH THIS
+	A 1 TO 1 RATIO OF MOLES ADDITIVE TO H+ NEEDED IS DETERMINED. MULTIPLYING THE 1 TO 1 RATIO BY
+	THE MOLAR MASS OF THE ADDITIVE GETS US THE MASS OF THE ADDITIVE NEEDED.
+	
+	THIRD: THE MOLARITY OF SOLUTIONS TO ADD IS SMIMPLE CONVERSIONS OF MOLES/LITERS = MOLARITY.	
+*/	
+	var change = (Math.pow(10, -t_ph)) - (Math.pow(10, -o_ph));
+	var mass = (change/h_count)*m_mass;
+	
+	
+	document.getElementById("ans").innerHTML = " You need " +  mass + " pure grams of your additive, assuming it is a strong acid. Otherwise, it may stop at a certian pH (substance specific, for more information look up the pKa of your additive for pH restrictions).";
+}
+
 </script>
-<form action="http://web.cecs.pdx.edu/~cleytham/CS461/pH_calc.cgi">
+
   <br>
-  original pH: <input type="text" name="regular"> 
-  target pH: <input type="text" name="regular"> 
-  </br> 
- <input type="submit" value="Submit">
-</form>
+  Original pH: <input type="int" id="o_ph" name="o_ph" value="7"> 
+  Target pH: <input type="int" id="t_ph" name="t_ph" value="7">
+  Molar mass of additive: <input type="int" id="m_mass" name="m_mass" value="0">
+  Number of H (hydrogen) in the additive*: <input type="int" id="h_count" name="h_count" value="0">
+  </br>
+  <p>
+  <br>This means to look at the chemical equation for the chemical and add up the numbers next to the capital H's (no number is 1), sulfuric acid (H2SO4) for example has two
+  </p>
+
+	<input id="clickMe"  type="button" value="clickMe" onclick="pH_diff();" />
+<p id="ans"></p>
+<p id="feh"></p>
+
+</p>
 
 </html>

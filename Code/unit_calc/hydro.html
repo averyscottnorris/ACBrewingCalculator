@@ -1,17 +1,75 @@
+<!DOCTYPE html>
 <html>
-<p>
+<body>
 
-<form action="http://web.cecs.pdx.edu/~cleytham/CS461/hydro.cgi">
-First name<br>
-<input type="text" name="temp">temp<br>
-<input type="text" name="grav">current gravity<br>
-<input type="text" name="cal">calibration<br>
-<input type="radio" name="degree" value="fahrenheit">Fahrenheit<br>
-<input type="radio" name="degree" value="celcius">Celsius<br>
-<input type="submit" value="Submit">
+<h3>testing stuff<h3>
+<!--
+Checkbox: <input type= "checkbox" id="myCheck">
 
-</form>
+<button onclick="myFunction()"> Press me baby </button>
 
+<script>
+var loop;
+function myFunction(){
+	var x = document.getElementById("myCheck");
+	if(x.checked){
+		alert("You have checked the box");
+		return 1;
+	}
+	else{
+		alert("you need to check the box");
+		return 0;
+	}
+}
+
+</script>
+-->
+
+<script>
+function pH_diff(){
+	var temp = document.getElementById("temp").value; 
+	var cal = document.getElementById("cal").value;
+	var grav = document.getElementById("grav").value;
+	 
+	var c = document.getElementById("c").checked; 
+	var f = document.getElementById("f").checked; 
+	if(c == true && f == true){
+		alert("I cant...it's impossible to use two different units for the temperature...");
+	}
+	else if(c != true && f != true){
+		alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you....");
+	}
+	else{
+		grav = grav * (1.00130346 -.000134722124 * temp + .00000204052596 * Math.pow(temp,2) - .00000000232820948 * Math.pow(temp,3)) / (1.0013036 - .000134722124 * cal + .00000204052596 * Math.pow(cal, 2) - .0000000023280948 * Math.pow(cal, 3));
+		grav = grav*1000;
+		grav = Math.round(grav);
+		grav = grav/1000;
+		document.getElementById("ans").innerHTML = " The corrected (rounded to the 1/1000th place " +  grav;
+	}
+}
+
+</script>
+
+<!--
+<form name="myform" action="http://web.cecs.pdx.edu/~cleytham/CS461/pH_calc.cgi">
+-->
+  <br>
+  temp: <input type="int" id="temp" name="temp" value="0"> 
+  hydromete calibrtion temp: <input type="int" id="cal" name="cal" value="0">
+  current hydrometer reading: <input type="int" id="grav" name="grav" value="0">
+  celsius: <input type="checkbox" id="c">
+  fahrenheit: <input type="checkbox" id="f">
+  </br>
+
+<!--
+<script>
+	pH_diff();
+</script>
+-->
+	<input id="clickMe"  type="button" value="ckickMe" onclick="pH_diff();" />
+<p id="ans"></p>
+<p id="feh"></p>
 
 </p>
+
 </html>
