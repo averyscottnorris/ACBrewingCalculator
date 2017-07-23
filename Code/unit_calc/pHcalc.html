@@ -1,18 +1,33 @@
+<!--
+Author: Cody Leytham	date: 7/23/17
+purpose: This will calculate how much of a acid you will need to lower
+a pH the desired level.
+
+Copyright (c) 2017 Avery Norris and Cody Leytham
+
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+-->
+
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
+<title>ACBrewing pH correction calculator </title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 <body>
 
-<h3>testing stuff<h3>
+<h1>pH reduction calculator<h1>
 
 <script>
 function pH_diff(){
-	var o_ph = document.getElementById("o_ph").value; 
-	var t_ph = document.getElementById("t_ph").value;
-	var m_mass = document.getElementById("m_mass").value;
-	var h_count = document.getElementById("h_count").value;
+  var o_ph = document.getElementById("o_ph").value; 
+  var t_ph = document.getElementById("t_ph").value;
+  var m_mass = document.getElementById("m_mass").value;
+  var h_count = document.getElementById("h_count").value;
 	 
-	var c = document.getElementById("c").checked; 
-	var f = document.getElementById("f").checked; 
 /*
 	CALCULATION EXPLENATION. 
 	FIRST: DETERMINING HOW MANY MOLES OF BASE I WILL NEED TO NEUTRALIZE. MOLES H+ = 10^(-pH). SO
@@ -24,17 +39,26 @@ function pH_diff(){
 	A 1 TO 1 RATIO OF MOLES ADDITIVE TO H+ NEEDED IS DETERMINED. MULTIPLYING THE 1 TO 1 RATIO BY
 	THE MOLAR MASS OF THE ADDITIVE GETS US THE MASS OF THE ADDITIVE NEEDED.
 	
-	THIRD: THE MOLARITY OF SOLUTIONS TO ADD IS SMIMPLE CONVERSIONS OF MOLES/LITERS = MOLARITY.	
+	THIRD: THE MOLARITY OF SOLUTIONS TO ADD IS SMIMPLE CONVERSIONS OF MOLES/LITERS = MOLARITY.
+	EQUIVELENTLY SUBSTITUTING CHANGE IN PLACE OF MOLES YOU GET CHANGE CHANGE/MOLARITY = LITERS
 */	
 	var change = (Math.pow(10, -t_ph)) - (Math.pow(10, -o_ph));
 	var mass = (change/h_count)*m_mass;
+//	THIS WILL CALCULATE HOW MANY ML OF .01M CONCENTRATION YOU WILL NEED TO GET TO THE pH !!PER LITER!!
+//	.01 is the molarity so that is (change/molarity but since this is usually measured in ml, dividing by .001
+	var dilute_vol = (change/.00001);
 	
-	
-	document.getElementById("ans").innerHTML = " You need " +  mass + " pure grams of your additive, assuming it is a strong acid. Otherwise, it may stop at a certian pH (substance specific, for more information look up the pKa of your additive for pH restrictions).";
+	document.getElementById("ans").innerHTML ="You need " +  mass + " pure grams of your additive per liter of wort/water or " + dilute_vol + " ml of .01M (molarity)" +
+	" solution of your chosen additive. If the molarity is different on your additive just miltiply this volume by 10 for every decimal to the right or divide by 10" +
+	"for every dicimal place to the left your sample is from .01. This is also PER LITER!" + 
+	" .\n Assuming it is a strong acid, Otherwise it may stop at a certian pH " +
+	 "(substance specific, for more information look up the pKa of your additive for pH restrictions).<br> ";
 }
 
 </script>
-
+<!--
+	collecting user input
+-->
   <br>
   Original pH: <input type="int" id="o_ph" name="o_ph" value="7"> 
   Target pH: <input type="int" id="t_ph" name="t_ph" value="7">
@@ -44,11 +68,10 @@ function pH_diff(){
   <p>
   <br>This means to look at the chemical equation for the chemical and add up the numbers next to the capital H's (no number is 1), sulfuric acid (H2SO4) for example has two
   </p>
-
-	<input id="clickMe"  type="button" value="clickMe" onclick="pH_diff();" />
-<p id="ans"></p>
-<p id="feh"></p>
-
-</p>
+<!--
+	this runs the calculation and return the asnwer in the id ans
+-->
+  <input id="clickMe"  type="button" value="clickMe" onclick="pH_diff();" />
+  <p id="ans"></p>
 
 </html>

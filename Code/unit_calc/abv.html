@@ -1,0 +1,53 @@
+<!--
+Author: Cody Leytham	date: 7/23/17
+purpose: To calculate the abv based on original and final gravity
+
+Copyright (c) 2017 Avery Norris and Cody Leytham
+
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+<title>ABV calculator </title>
+<body>
+
+<h1>Gravity change to ABV<h1>
+
+
+<script>
+function abv_calc(){
+	//collecting data from the html
+	var og = document.getElementById("og").value; 
+	var fg = document.getElementById("fg").value;
+	var abv = 5;
+	var abv = (og - fg)*125*1.05;
+	abv = Math.round(abv*1000)/10;
+	
+	//I could not find any official documantation of this formula but it seems to be widely used.  
+	document.getElementById("ans").innerHTML = "(" +  og + " - " + fg + ")*125*1.05 = " + abv + "% ABV.";
+}
+
+</script>
+
+  <br>
+<!--
+	collecting user data
+-->
+
+  Original gravity: <input type="int" id="og" name="og" value="1">
+  Final gravity: <input type="int" id="fg" name="fg" value="1">
+  </br>
+<!--
+	running the abv calculation and changing the id ans into the answer.
+-->
+  
+  <input id="clickMe"  type="button" value="clickMe" onclick="abv_calc();" />
+  <p id="ans"></p>
+
+
+</html>

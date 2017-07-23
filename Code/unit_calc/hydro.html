@@ -1,58 +1,72 @@
+<!--
+Author: Cody Leytham	date: 7/23/17
+purpose: To correct hydrometer calculations based on temperature.
+Copyright (c) 2017 Avery Norris and Cody Leytham
+
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+-->
+
 <!DOCTYPE html>
-<html>
+<head>
+<title>ACBrewing hydrometer correction calculator </title>
+<html lang="en-US">
+<!--
+<link rel="stylesheet" type="text/css" href="web.cecs.pdx.edu/~cleytham/CS461/mystyle.css">
+-->
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 <body>
+<h1>hydrometer correction calculator</h1>
 
-<h3>testing stuff<h3>
 <!--
-Checkbox: <input type= "checkbox" id="myCheck">
+	For this calculation the temperature is changed from celsius to fahrenheit if needed. So this calculation is off by a small
+	rounding error that should be irrelevent in home brewing.
 
-<button onclick="myFunction()"> Press me baby </button>
-
-<script>
-var loop;
-function myFunction(){
-	var x = document.getElementById("myCheck");
-	if(x.checked){
-		alert("You have checked the box");
-		return 1;
-	}
-	else{
-		alert("you need to check the box");
-		return 0;
-	}
-}
-
-</script>
 -->
 
 <script>
-function pH_diff(){
-	var temp = document.getElementById("temp").value; 
-	var cal = document.getElementById("cal").value;
-	var grav = document.getElementById("grav").value;
-	 
-	var c = document.getElementById("c").checked; 
-	var f = document.getElementById("f").checked; 
-	if(c == true && f == true){
-		alert("I cant...it's impossible to use two different units for the temperature...");
-	}
-	else if(c != true && f != true){
-		alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you....");
-	}
-	else{
-		grav = grav * (1.00130346 -.000134722124 * temp + .00000204052596 * Math.pow(temp,2) - .00000000232820948 * Math.pow(temp,3)) / (1.0013036 - .000134722124 * cal + .00000204052596 * Math.pow(cal, 2) - .0000000023280948 * Math.pow(cal, 3));
-		grav = grav*1000;
-		grav = Math.round(grav);
-		grav = grav/1000;
-		document.getElementById("ans").innerHTML = " The corrected (rounded to the 1/1000th place " +  grav;
-	}
+function hydro_corr(){
+/*-
+	The equation for the correction was taken from a post in brewery.org/librry/HydromCorr0992.html by Christopher Lyons who cited
+	the "Handbooks of chemistry and Physics (CRC)". I could not find the equation (if found a 2400 page pdf) in the book but this
+	posted equation's outputs are close to charts i have found (possible rounding errors in the 10,000ths place, so very small
+	difference and the equation agrees with other ones I have found on the internet.
+*/
+	//getting the data from the html
+  var temp = document.getElementById("temp").value; 
+  var cal = document.getElementById("cal").value;
+  var grav = document.getElementById("grav").value;
+	
+  var c = document.getElementById("c").checked; 
+  var f = document.getElementById("f").checked; 
+	//validating information
+  if(c == true && f == true){
+    //alerting the user that they have chosen both celsius an fahrenheit as their units.
+    alert("I cant...it's impossible to use two different units for the temperature...");
+  }
+  else if(c != true && f != true){
+    //alerting the user that they have used neither celsius or farhenheit as their units
+    alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you....");
+  }
+  else{
+    if(c == true)
+      temp = (temp *(9/5)+32);
+    
+    grav = grav * (1.00130346 -.000134722124 * temp + .00000204052596 * Math.pow(temp,2) - .00000000232820948 * Math.pow(temp,3)) / (1.0013036 - .000134722124 * cal + .00000204052596 * Math.pow(cal, 2) - .0000000023280948 * Math.pow(cal, 3));
+    grav = grav*1000;
+    grav = Math.round(grav);
+    grav = grav/1000;
+    document.getElementById("ans").innerHTML ="The corrected (rounded to the 1/1000th place " +  grav;
+  }
 }
 
 </script>
 
-<!--
-<form name="myform" action="http://web.cecs.pdx.edu/~cleytham/CS461/pH_calc.cgi">
--->
   <br>
   temp: <input type="int" id="temp" name="temp" value="0"> 
   hydromete calibrtion temp: <input type="int" id="cal" name="cal" value="0">
@@ -60,16 +74,11 @@ function pH_diff(){
   celsius: <input type="checkbox" id="c">
   fahrenheit: <input type="checkbox" id="f">
   </br>
-
 <!--
-<script>
-	pH_diff();
-</script>
+	this is runing the calculation and returning the answer in the id ans
 -->
-	<input id="clickMe"  type="button" value="ckickMe" onclick="pH_diff();" />
+  <input id="clickMe"  type="button" value="ckickMe" onclick="hydro_corr();" />
 <p id="ans"></p>
-<p id="feh"></p>
 
-</p>
 
 </html>
