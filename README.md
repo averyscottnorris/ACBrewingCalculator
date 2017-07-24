@@ -16,6 +16,22 @@
 
 # ACBrewingCalculator
 Google Chrome extension that provides brewers with a brewing calculator
+for basic brewing aspects.  Brew on, friends!
+
+# Contribution, Building and Checkout
+To clone the repository for your own development: NEED MORE HEREEERERERERERERER
+
+# Installation
+Download the Code folder to your computer.  Open your Google Chrome web
+browser, and go to 'chrome://extensions'.  Check the box near the top
+to enter 'Developer Mode'.  Then click the box that says 'Load Unpacked 
+Extension', navigate to the 'Code' folder on your computer.  The extension
+will install
+
+ADD PACKED VERSION TO CHROME STORE???
+
+
+-------------------------------------------------------------------------
 
 #Cody + Avery
 We have done some work on the layout of how are program will work. We
@@ -43,14 +59,17 @@ I've got a basic framework for the chrome extension put together, and
 have the html for the UI started. Still working on the HTML/CSS side of
 things to try and make the UI prettier.
 
-Limitations
-	this is an unfinished product and limitations are unknown but 
-	for many of the applications, it will be limited to realistic
-	values and data. Ex: dont use unrealisticly small pH values
-	on the pH adjustment calculator. There is also rounding that
-	assumed there is a realistic margin of error. Ex: the pH
-	calculator rounds 5 gallons up to 20 liters from 18.9 incurring
-	a 5.5% error wich is acceptable in home brewing.
+-------------------------------------------------------------------------
+
+
+#Limitations
+This is an unfinished product and limitations are unknown but 
+for many of the applications, it will be limited to realistic
+values and data. Ex: dont use unrealisticly small pH values
+on the pH adjustment calculator. There is also rounding that
+assumed there is a realistic margin of error. Ex: the pH
+calculator rounds 5 gallons up to 20 liters from 18.9 incurring
+a 5.5% error wich is acceptable in home brewing.
 
 
 Languages
