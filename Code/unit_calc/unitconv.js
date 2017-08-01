@@ -1,5 +1,4 @@
-
-function lrg_dry(mass, from, to){
+function dryConv(mass, from, to){
 //  1 pound = 16oz| 1 kg = 16pounds|  1 kg = 35.2oz| 1 pound = .4545 kg (rounded to .455)|
   var res;
   if(from == 1 && to == 2){
@@ -31,3 +30,23 @@ function lrg_dry(mass, from, to){
   return res;
 }
 
+function wetConv(vol, from, to){
+  var res;
+  if(from == 1 && to == 2)
+    res = vol*.264;
+  if(from == 2 && to == 1)
+    res = vol/.264;
+  else
+    return vol
+}
+
+function scrub(src, len){
+  var check = scrubFloat(src, 10);
+  if(check == 1)
+    alert("Some input is not a number...");
+  else if(check == 2)
+    alert("Some input is to large");
+  else if(check == 3)
+    alert("Some input is too long and not a number");
+  return check;
+}
