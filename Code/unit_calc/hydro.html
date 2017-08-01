@@ -12,13 +12,12 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 -->
 
 <!DOCTYPE html>
+<html lang="en-US">
 <head>
 <title>ACBrewing hydrometer correction calculator </title>
-<html lang="en-US">
-<!--
-<link rel="stylesheet" type="text/css" href="web.cecs.pdx.edu/~cleytham/CS461/mystyle.css">
--->
+<meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="mystyle.css">
+<script type="text/javascript" src="shared.js"></script>
 </head>
 <body>
 <h1>hydrometer correction calculator</h1>
@@ -44,10 +43,28 @@ function hydro_corr(){
 	
   var c = document.getElementById("c").checked; 
   var f = document.getElementById("f").checked; 
-	//validating information
+    //validating information
   if(c == true && f == true){
     //alerting the user that they have chosen both celsius an fahrenheit as their units.
     alert("I cant...it's impossible to use two different units for the temperature...");
+  }
+  else if(!isInt(temp)){
+    alert("Temp is invalid, please enter a whole numbmer.");
+  }
+  else if(!isFloat(cal)){
+    alert("Calibration is not a number.");
+  }
+  else if(!isFloat(grav)){
+    alert("Gravity is not a numer.");
+  }
+  else if(!checkLen(temp)){
+    alert("Temp is to long of a number...that...that should like set the atmosphere on fire.....");
+  }
+  else if(!checkLen(cal)){
+    alert("Invalid calibration value.");
+  }
+  else if(!checkLen(grav)){
+    alert("The gravity is not a valid number");
   }
   else if(c != true && f != true){
     //alerting the user that they have used neither celsius or farhenheit as their units
@@ -66,19 +83,24 @@ function hydro_corr(){
 }
 
 </script>
-
+<div class="input">
   <br>
   temp: <input type="int" id="temp" name="temp" value="0"> 
+  <br>
   hydromete calibrtion temp: <input type="int" id="cal" name="cal" value="0">
+  <br>
   current hydrometer reading: <input type="int" id="grav" name="grav" value="0">
+  <br>
   celsius: <input type="checkbox" id="c">
+  <br>
   fahrenheit: <input type="checkbox" id="f">
-  </br>
+  <br>
 <!--
 	this is runing the calculation and returning the answer in the id ans
 -->
-  <input id="clickMe"  type="button" value="ckickMe" onclick="hydro_corr();" />
+<div class="hover_button">
+  <input id="clickMe" class="button"  type="button" value="Calculate" onclick="hydro_corr();" />
+</div>
 <p id="ans"></p>
-
 
 </html>

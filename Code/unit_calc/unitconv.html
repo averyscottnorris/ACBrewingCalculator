@@ -1,0 +1,168 @@
+<!--
+Author: Cody Leytham	date: 7/27/17
+purpose: To convert recipies from imperial to metric and vice versa.
+Copyright (c) 2017 Avery Norris and Cody Leytham
+
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<style>
+  t1{ padding-left: 10em;}
+  t2{ padding-left: 3em;}
+</style>
+
+<title>ACBrewing unit conversion calculator </title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script type="text/javascript" src="shared.js"></script>
+<script type="text/javascript" src="unitconv.js"></script>
+</head>
+<body>
+<h1>hydrometer correction calculator</h1>
+
+
+<script>
+function unit_conv(){
+	//getting the data from the html
+  var g1 = document.getElementById("g1").value; 
+  var gf1 = document.getElementById("gf1").value; 
+  var gt1 = document.getElementById("gt1").value;
+  var res = 1;
+  /*
+  var checkType = isFloat(g1);
+  var checkLen = scrubLen(g1);
+  if(!checkType)
+	alert("That is not an number...");
+  else if(!checkLen){
+	alert("I am sorry but that is too long...");
+  }
+  else if(g1 < 0)
+	alert("I cannot break the laws of physics\nPlease enter a positive number...");
+  else{
+    res = lrg_dry(g1, gf1, gt1);
+    document.getElementById("grain1").innerHTML = g1 + " of the original unit is " + res + " of the target  unit.";
+  }
+  */
+  //if the first grain is a positive number that is not too long, then doing the calculations
+  var check = scrubFloat(g1, 10);
+  document.getElementById("grain1").innerHTML = check;
+  if(g1 > 0){
+    if(check == 0){
+      res = lrg_dry(g1, gf1, gt1);
+      document.getElementById("grain1").innerHTML = g1 + " of the original unit is " + res + " of the target  unit.";
+    }
+    else if(check == 1)
+      alert("The input for the first grain is not a number...");
+    else if(check == 2)
+      alert("The input for the first grain is to long");
+    else if(check == 3)
+      alert("The input for the first grain is to long, and is not a number...");
+    else
+      alert("UH OOOOOH, something unexpected was entered.");
+    }
+  else
+    alert("Please enter numbers larger that 0.");
+}
+
+</script>
+  	
+<form>
+<div class="input">
+  <br>
+  All grain:<t1>from</t1><t2>to</t2>
+  <br>
+  Grain 1: <input type="int" id="g1" name="g1" value="0"> 
+<!--
+  gf1 means grain from 1,  its the unit that the 1st GRAIN is being converted FROM, the second
+  gains unit is gf2 and the naming convention will hold for liquid malt (lf1), dry malt (df1)
+  and hops (hf1).
+-->
+
+  <select id="gf1">
+    <option value="1"> killo</option>
+    <option value="2"> pounds</option>
+    <option value="3"> ounces</option>
+  </select>
+<!--
+  gt1 = 1st GRAIN TO unit, the unit the tst grain is being converted to, see from above for further
+  explenation.
+-->
+  <select id="gt1">
+    <option value="1"> killo</option>
+    <option value="2"> pound</option>
+    <option value="3"> ounces</option>
+  </select>
+   
+  <br>
+  Grain 2: <input type="int" id="g2" name="g2" value="0"> 
+  <select id="gf2">
+    <option value="1"> killo</option>
+    <option value="2"> pounds</option>
+    <option value="3"> ounces</option>
+  </select>
+  
+  <select id="gt2">
+    <option value="1"> killo</option>
+    <option value="2"> pound</option>
+    <option value="3"> ounces</option>
+  </select>
+  </form>
+
+<!--
+  Liquid malt extract:
+  <br>
+  LME 1: <input type="int" id="l1" name="l1" value="0"> 
+  <br>
+  LME 2: <input type="int" id="l2" name="l2" value="0"> 
+  <br>
+  LME 3: <input type="int" id="l3" name="l3" value="0"> 
+  <br>
+
+  dry malt extract:
+  <br>
+  DME 1: <input type="int" id="d1" name="d1" value="0"> 
+  <br>
+  DME 2: <input type="int" id="d2" name="d2" value="0"> 
+  <br>
+  DME 3: <input type="int" id="d3" name="d3" value="0"> 
+  <br>
+	
+
+  Hops:
+  <br>
+  hop 1: <input type="int" id="h1" name="h1" value="0"> 
+  <br>
+  hop 2: <input type="int" id="h2" name="h2" value="0"> 
+  <br>
+  hop 3: <input type="int" id="h3" name="h3" value="0"> 
+  <br>
+-->
+
+<!--
+	this is runing the calculation and returning the answer in the id ans
+-->
+  <div class="hover_button">
+    <input id="clickMe" class="button"  type="button" value="Calculate" onclick="unit_conv();" />
+  </div>
+  <div class="output">
+    <p id="grain1"></p>
+    <p id="grain2"></p>
+    <p id="liquid1"></p>
+    <p id="liquid2"></p>
+    <p id="dry1"></p>
+    <p id="dry2"></p>
+    <p id="hop1"></p>
+    <p id="hop2"></p>
+  </div>
+
+</div>
+
+</html>
