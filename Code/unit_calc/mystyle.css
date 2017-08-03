@@ -1,5 +1,6 @@
 body{
-	background-color: #ffffb3;
+	background-image: url("img/parchment.jpg");
+/*	background-image: url("img/parchment.jpg");*/
 }
 
 h1{
@@ -8,4 +9,41 @@ h1{
 
 p{
 	color: red;
+}
+
+.input{
+	text-align:center;
+	margin:auto;
+	position: absolute;
+	color:green;
+}
+
+.button{
+	
+	text-align:center;
+/*
+	height 100px;
+	width: 120px;
+*/
+	position: relative;
+	color:black;
+	background-color: #cccc00;
+	padding: 10px 10px 10px 10px;
+	border-style: outset;
+	border-color: #ffff1a; 
+	border-width: 5px;
+	margin: auto;
+}
+
+.hover_button:hover .button{
+	background-color: #e6e600;
+	border-color: #ffff4d; 
+	cursor: pointer;
+}
+
+.output{
+	text-align:center;
+	position: relative;
+	color: black;	
+
 }
