@@ -1,4 +1,5 @@
 <!--
+File Name: hydro.html
 Author: Cody Leytham	date: 7/23/17
 purpose: To correct hydrometer calculations based on temperature.
 Copyright (c) 2017 Avery Norris and Cody Leytham
@@ -9,6 +10,12 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ If you find any error or bug, please send feedback to acbrewbug@hotmail.com
 -->
 
 <!DOCTYPE html>
@@ -20,15 +27,22 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 <script type="text/javascript" src="shared.js"></script>
 </head>
 <body>
+<div class="bground">
+</div>
+
 <h1>hydrometer correction calculator</h1>
 
 <!--
+    document.getElementById("ans").innerHTML ="The corrected (rounded to the 1/1000th place " +  grav;
 	For this calculation the temperature is changed from celsius to fahrenheit if needed. So this calculation is off by a small
 	rounding error that should be irrelevent in home brewing.
 
 -->
 
 <script>
+
+
+
 function hydro_corr(){
 /*-
 	The equation for the correction was taken from a post in brewery.org/librry/HydromCorr0992.html by Christopher Lyons who cited
@@ -40,7 +54,10 @@ function hydro_corr(){
   var temp = document.getElementById("temp").value; 
   var cal = document.getElementById("cal").value;
   var grav = document.getElementById("grav").value;
-	
+  testEmpty(temp);
+  testEmpty(cal);
+  testEmpty(grav);
+
   var c = document.getElementById("c").checked; 
   var f = document.getElementById("f").checked; 
     //validating information
@@ -78,7 +95,7 @@ function hydro_corr(){
     grav = grav*1000;
     grav = Math.round(grav);
     grav = grav/1000;
-    document.getElementById("ans").innerHTML ="The corrected (rounded to the 1/1000th place " +  grav;
+    document.getElementById("ans").innerHTML ="The corrected (rounded to the 1/1000th place) is  " +  grav;
   }
 }
 
@@ -99,8 +116,12 @@ function hydro_corr(){
 	this is runing the calculation and returning the answer in the id ans
 -->
 <div class="hover_button">
-  <input id="clickMe" class="button"  type="button" value="Calculate" onclick="hydro_corr();" />
+  <input id="clickMe" class="button"  type="button" value="Calculate" onclick="hydro_corr();" /> 
 </div>
-<p id="ans"></p>
 
+</div>
+<div class="output">
+<p id="ans"></p>
+</div>
+</body>
 </html>

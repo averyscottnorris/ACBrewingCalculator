@@ -1,4 +1,5 @@
 <!--
+File Name:pHcalc.html
 Author: Cody Leytham	date: 7/23/17
 purpose: This will calculate how much of a acid you will need to lower
 a pH the desired level.
@@ -11,13 +12,26 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ If you find any error or bug, please send feedback to acbrewbug@hotmail.com
 -->
 
 <!DOCTYPE html>
 <html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script type="text/javascript" src="shared.js"></script>
 <title>ACBrewing pH correction calculator </title>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
 <body>
+<div class="bground">
+</div>
 
 <h1>pH reduction calculator<h1>
 
@@ -59,19 +73,34 @@ function pH_diff(){
 <!--
 	collecting user input
 -->
+<form>
+<div class="input">
   <br>
   Original pH: <input type="int" id="o_ph" name="o_ph" value="7"> 
+  <br>
   Target pH: <input type="int" id="t_ph" name="t_ph" value="7">
+  <br>
   Molar mass of additive: <input type="int" id="m_mass" name="m_mass" value="0">
+  <br>
   Number of H (hydrogen) in the additive*: <input type="int" id="h_count" name="h_count" value="0">
   </br>
   <p>
-  <br>This means to look at the chemical equation for the chemical and add up the numbers next to the capital H's (no number is 1), sulfuric acid (H2SO4) for example has two
+<div class="note">
+  <br>This means to look at the chemical equation for the chemical and add up the numbers next to the <br> capital H's (no number is 1), sulfuric acid (H2SO4) for example has two
   </p>
+  </div>
 <!--
 	this runs the calculation and return the asnwer in the id ans
 -->
-  <input id="clickMe"  type="button" value="clickMe" onclick="pH_diff();" />
-  <p id="ans"></p>
+  <div class="hover_button">
+    <input id="clickMe" class="button"  type="button" value="Calculate" onclick="unit_conv();" />
+  </div>
 
+</div>
+</form>
+<div class="output">
+  <p id="ans"></p>
+</div>
+
+</body>
 </html>

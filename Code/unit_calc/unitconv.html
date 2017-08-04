@@ -1,4 +1,5 @@
 <!--
+File Name: unitconvo.html
 Author: Cody Leytham	date: 7/27/17
 purpose: To convert recipies from imperial to metric and vice versa.
 Copyright (c) 2017 Avery Norris and Cody Leytham
@@ -9,6 +10,12 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ If you find any error or bug, please send feedback to acbrewbug@hotmail.com
 -->
 
 <!DOCTYPE html>
@@ -26,6 +33,9 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 <script type="text/javascript" src="unitconv.js"></script>
 </head>
 <body>
+
+<div class="bground">
+</div>
 <h1>Unit conversion calculator</h1>
 
 
@@ -169,9 +179,10 @@ function unit_conv(){
   <div class="hover_button">
     <input id="clickMe" class="button"  type="button" value="Calculate" onclick="unit_conv();" />
   </div>
+</div>
 <!--
 -->
-  <div class="output">
+<div class="output">
     <p id="grain1"></p>
     <p id="grain2"></p>
     <p id="liquid1"></p>
@@ -180,8 +191,6 @@ function unit_conv(){
     <p id="dry2"></p>
     <p id="hop1"></p>
     <p id="hop2"></p>
-  </div>
-
 </div>
 </body>
 </html>

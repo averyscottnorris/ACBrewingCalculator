@@ -10,13 +10,25 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ If you find any error or bug, please send feedback to acbrewbug@hotmail.com
 -->
 <!DOCTYPE html>
 <html lang="en-US">
+<head>
 <title>ABV calculator </title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script type="text/javascript" src="shared.js"></script>
+</head>
 <body>
-
-<h3>testing stuff<h3>
+<div class="bground">
+</div>
+<h1>Alcohol By Volume Estimator</h1>
 
 
 <script>
@@ -38,16 +50,19 @@ function abv_calc(){
 <!--
 	collecting user data
 -->
-
+<div class="input">
   Original gravity: <input type="int" id="og" name="og" value="1">
   Final gravity: <input type="int" id="fg" name="fg" value="1">
   </br>
 <!--
 	running the abv calculation and changing the id ans into the answer.
 -->
-  
-  <input id="clickMe"  type="button" value="clickMe" onclick="abv_calc();" />
-  <p id="ans"></p>
-
-
+  <div class="hoiver_button"> 
+    <input id="clickMe"  type="button" value="clickMe" onclick="abv_calc();" />
+  </div>
+</div>
+  <div class="output">  
+    <p id="ans"></p>
+  </div>
+</body>
 </html>
