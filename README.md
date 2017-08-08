@@ -41,7 +41,7 @@ To clone the repository for your own development:
 offer your changes to the original ACBrewingCalculator repo.  Please provide a 
 detailed explaination of changes for your modifications to be considered.
 
-7. In the wise words of the father of homebrew: "Relax. Don't worry. And have a homebrew."
+7. In the wise words of the father of homebrew, Charlie Papazian: "Relax. Don't worry. And have a homebrew."
     
 
 For more detailed information, take a look at Karl Broman's Github 
