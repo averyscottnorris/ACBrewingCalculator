@@ -2,6 +2,24 @@
 Google Chrome extension that provides brewers with a easy-to-access 
 brewing calculator for basic brewing aspects.  Brew on, friends!
 
+
+# Installation
+To install the ACBrewingCalculator Chrome extension:
+1. Download the 'Code' folder to your computer.  
+
+2. Open your Google Chrome web browser, and go to 'chrome://extensions'.
+
+3. Check the box near the top to enter 'Developer Mode'.
+
+4. Then click the box that says 'Load Unpacked Extension', and navigate to
+the 'Code' folder on your computer.
+
+5. The extension will install, and can be accessed by the icon in the
+top-right of the browser bar.
+
+------ADD PACKED VERSION TO CHROME STORE???------
+
+
 # Forking and Contribution
 To clone the repository for your own development:
 
@@ -11,7 +29,7 @@ To clone the repository for your own development:
     $ git clone git@github.com:yourusername/ACBrewingCalculator
 
 3. Change into the repo with:
-    $ cd ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator
+    <code>$ cd ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator </code>
 
 4. To connect your copy with the original repo:
     $ git remote add ACBrewingCalculator 
@@ -28,16 +46,6 @@ detailed explaination of changes for your modifications to be considered.
 
 For more detailed information, take a look at Karl Broman's Github 
 tutorial at: http://kbroman.org/github_tutorial/pages/fork.html
-
-# Installation
-Download the Code folder to your computer.  Open your Google Chrome web
-browser, and go to 'chrome://extensions'.  Check the box near the top
-to enter 'Developer Mode'.  Then click the box that says 'Load Unpacked 
-Extension', navigate to the 'Code' folder on your computer.  The extension
-will install, and can be accessed by the icon in the top-right of the 
-browser bar.
-
-ADD PACKED VERSION TO CHROME STORE???
 
 
 -------------------------------------------------------------------------
