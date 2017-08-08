@@ -1,3 +1,4 @@
+/*
 function dryConv(mass, from, to){
 //  1 pound = 16oz| 1 kg = 16pounds|  1 kg = 35.2oz| 1 pound = .4545 kg (rounded to .455)|
   var res;
@@ -93,3 +94,5 @@ function unit_conv(){
       alert("Please only use positive number. NO SPATIAL SINGULARITIES!!!.");
   }
 }
+
+*/
