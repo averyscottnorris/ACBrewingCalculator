@@ -94,3 +94,10 @@ function scrubFloat(src, lim){
     return 4;
 }
 
+function testEmpty(src){
+  if(src.length == 0){
+    alert("There is an empty field.");
+    return 1;
+  }
+  return 0;
+}

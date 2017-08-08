@@ -1,31 +1,79 @@
-body{
+.bground{
+/*
+	position: absolute;
+*/
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:0;
+	opacity:0.5;
+	content:"";
 	background-image: url("img/parchment.jpg");
-/*	background-image: url("img/parchment.jpg");*/
+}
+
+
+body{
+	border: dashed;
+	width: 80%;
 }
 
 h1{
-	color: #cccc00;
+	font-family: "Blackadder ITC", "Times New Roman", Times, Serif;
+	font-size: 40px;
+	color: black;
+/*
+	padding: 1em 2em 1em 1em; 
+*/
+
 }
 
 p{
-	color: red;
+	color: #black;
 }
 
 .input{
+
+	font-family: "Baskerville Old Face", "Times New Roman", Times, Serif;
+	z-index:1;
 	text-align:center;
 	margin:auto;
+	width: 45%;
 	position: absolute;
-	color:green;
+	color: black;
+	float: left;
+	border: solid;
 }
+
+.output{
+	font-family: "Papyrus", "Times New Roman", Times, Serif;
+	z-index:1;
+	text-align:left;
+	font-size: 20px;
+	position: relative;
+	color: black;		
+	width: 40%;	
+	height: 100px;
+	float: right; 
+}
+
+.note{
+	z-index:1;
+	text-align: center;
+	margin: auto;
+	position: relative;
+	font-size: 15px;
+	font-style: italic;
+	color:black;
+}
+
 
 .button{
 	
 	text-align:center;
-/*
-	height 100px;
-	width: 120px;
-*/
-	position: relative;
+	z-index:1;
+	position: absolute;
 	color:black;
 	background-color: #cccc00;
 	padding: 10px 10px 10px 10px;
@@ -36,14 +84,8 @@ p{
 }
 
 .hover_button:hover .button{
-	background-color: #e6e600;
+	z-index:1;
+	background-color: #e6e600;  
 	border-color: #ffff4d; 
 	cursor: pointer;
-}
-
-.output{
-	text-align:center;
-	position: relative;
-	color: black;	
-
 }

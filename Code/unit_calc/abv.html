@@ -36,7 +36,22 @@ function abv_calc(){
 	//collecting data from the html
 	var og = document.getElementById("og").value; 
 	var fg = document.getElementById("fg").value;
-	var abv = 5;
+	if(!isFloat(og)){
+		alert("The original gravity is an invalid number. Use . not , to divide the partial numbers.");
+		return;
+	}
+	if(!isFloat(fg)){
+		alert("The final gravity is an invalid number. Use . not , to divide the partial numbers.");
+		return;
+	}
+	if(!checkLen(og, 7)){
+		alert("The original gravity is too long of a number");
+		return;
+	}
+	if(!checkLen(fg, 7)){
+		alert("The final gravity is too long of a number");
+		return;
+	}
 	var abv = (og - fg)*125*1.05;
 	abv = Math.round(abv*1000)/1000;
 	

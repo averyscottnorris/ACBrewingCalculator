@@ -33,7 +33,6 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 <h1>hydrometer correction calculator</h1>
 
 <!--
-    document.getElementById("ans").innerHTML ="The corrected (rounded to the 1/1000th place " +  grav;
 	For this calculation the temperature is changed from celsius to fahrenheit if needed. So this calculation is off by a small
 	rounding error that should be irrelevent in home brewing.
 
@@ -46,7 +45,7 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 function hydro_corr(){
 /*-
 	The equation for the correction was taken from a post in brewery.org/librry/HydromCorr0992.html by Christopher Lyons who cited
-	the "Handbooks of chemistry and Physics (CRC)". I could not find the equation (if found a 2400 page pdf) in the book but this
+	the "Handbooks of chemistry and Physics (CRC)". I could not find the equation (i found a 2400 page pdf) in the book but this
 	posted equation's outputs are close to charts i have found (possible rounding errors in the 10,000ths place, so very small
 	difference and the equation agrees with other ones I have found on the internet.
 */
@@ -57,7 +56,7 @@ function hydro_corr(){
   testEmpty(temp);
   testEmpty(cal);
   testEmpty(grav);
-
+  
   var c = document.getElementById("c").checked; 
   var f = document.getElementById("f").checked; 
     //validating information
@@ -68,24 +67,25 @@ function hydro_corr(){
   else if(!isInt(temp)){
     alert("Temp is invalid, please enter a whole numbmer.");
   }
-  else if(!isFloat(cal)){
+  else if(!isInt(cal)){
     alert("Calibration is not a number.");
   }
   else if(!isFloat(grav)){
     alert("Gravity is not a numer.");
   }
-  else if(!checkLen(temp)){
+  else if(!checkLen(temp,15)){
     alert("Temp is to long of a number...that...that should like set the atmosphere on fire.....");
   }
-  else if(!checkLen(cal)){
-    alert("Invalid calibration value.");
+  else if(!checkLen(cal,4)){
+    alert("I highly doubt that people would balibrate above 999 degrees.");
   }
-  else if(!checkLen(grav)){
+  else if(!checkLen(grav,15)){
     alert("The gravity is not a valid number");
   }
   else if(c != true && f != true){
     //alerting the user that they have used neither celsius or farhenheit as their units
-    alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you....");
+    alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you...");
+    return;
   }
   else{
     if(c == true)
