@@ -1,50 +1,57 @@
 <!--
-Author: Avery Norris
-Date: July 31, 2017
-Purpose: Calculate International Bitterness Units based on
-the amount of hops used, the alpha acid value of the hops,
-and the length and volume of the boil. This calculator uses
-the equations developed by Glenn Tinseth.
+    Author: Avery Norris
+    Date: July 31, 2017
+    Purpose: Calculate International Bitterness Units based on
+    the amount of hops used, the alpha acid value of the hops,
+    and the length and volume of the boil. This calculator uses
+    the equations developed by Glenn Tinseth.
 
-Copyright (c) 2017 Avery Norris and Cody Leytham
+    Copyright (c) 2017 Avery Norris and Cody Leytham
 
-                      GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+    GNU GENERAL PUBLIC LICENSE
+    Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
+    Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+    Everyone is permitted to copy and distribute verbatim copies
+    of this license document, but changing it is not allowed.
 -->
 <!DOCTYPE html>
 
 <html lang="en-US">
-<title>IBU Calculator</title>
-<!--<link rel="stylesheet" type="text/css" href="mystyle.css">-->
-<body>
-    <!--<div class="bground">-->
-</div>
+    <title>IBU Calculator</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <body>
+        <div class="bground">
+        </div>
 
-    <h1>IBU Calculator</h1>
+        <h1>IBU Calculator</h1>
 
-    <br>
+        <br>
 
+        <div class="input">
+            Ounces of hops: <input type="float" id="oz" name="oz">
+            <br>
+            Alpha Acid Percentage: <input type="float" id="aa" name="aa">
+            <br>
+            Final volume (gallons): <input type="float" id="vol" name="vol">
+            <br>
+            Boil length (minutes): <input type="float" id="time" name="time">
+            <br>
+            Boil Gravity (1.XXX): <input type="float" id="gravity" name="gravity">
+            </br>
+            <br>
 
-Ounces of hops: <input type="int" id="oz" name="oz">
-<br>
-Alpha Acid Percentage: <input type="int" id="aa" name="aa">
-<br>
-Boil volume (gallons): <input type="int" id="vol" name="vol">
-<br>
-Boil length (minutes): <input type="int" id="time" name="time">
-</br>
-<br>
-<button id="IBU" type="button">Calculate</button>
+            <div class="hover_button">
+                <button id="IBU" type="button">Calculate</button>
+            </div>
 
-<div class="output">
-    <p id="ibu_output"></p>
-</div>
+        </div>
 
-<script type="text/javascript" src="shared.js"></script>
+        <div class="output">
+            <p id="ibu_output"></p>
+        </div>
 
-</body>
+        <script type="text/javascript" src="shared.js"></script>
+
+    </body>
 </html>
