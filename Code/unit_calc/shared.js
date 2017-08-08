@@ -149,7 +149,7 @@ function unit_conv(){
     if(value > 0){
       //if the there is no error and it is a positive numer, doing the calculations and returning the results.
       res = wetConv(value, lf1, lt1);
-      document.getElementById("liquid1").innerHTML = value + " " + fname + " is" + res + " " + tname;
+      document.getElementById("liquid1").innerHTML = value + " " + fname + " is " + res + " " + tname;
     }
     else if(value < 0)
       alert("Please only use positive number. NO SPATIAL SINGULARITIES!!!.");
