@@ -1,4 +1,59 @@
-    AC Brewing Calculator is a Chrome extension that gives easy access to basic brewing calculations
+# ACBrewingCalculator
+Google Chrome extension that provides brewers with a easy-to-access 
+brewing calculator for basic brewing aspects.  Brew on, friends!
+
+# Forking and Contribution
+To clone the repository for your own development:
+
+1. Click the "Fork" button to copy the repo to your Github account.
+
+2. Open a terminal and type the following:
+    $ git clone git@github.com:yourusername/ACBrewingCalculator
+
+3. Change into the repo with:
+    $ cd ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator
+
+4. To connect your copy with the original repo:
+    $ git remote add ACBrewingCalculator 
+
+5. Make changes, and use 'git add' and 'git commit' to finalize those changes. Use
+'git push' to publish your commits to your own github repo.
+
+6. On your own github copy of the repo, you may use the "Pull Request" button to
+offer your changes to the original ACBrewingCalculator repo.  Please provide a 
+detailed explaination of changes for your modifications to be considered.
+
+7. In the wise words of the father of homebrew: "Relax. Don't worry. And have a homebrew."
+    
+
+For more detailed information, take a look at Karl Broman's Github 
+tutorial at: http://kbroman.org/github_tutorial/pages/fork.html
+
+# Installation
+Download the Code folder to your computer.  Open your Google Chrome web
+browser, and go to 'chrome://extensions'.  Check the box near the top
+to enter 'Developer Mode'.  Then click the box that says 'Load Unpacked 
+Extension', navigate to the 'Code' folder on your computer.  The extension
+will install, and can be accessed by the icon in the top-right of the 
+browser bar.
+
+ADD PACKED VERSION TO CHROME STORE???
+
+
+-------------------------------------------------------------------------
+
+
+# Limitations
+This is an unfinished product and limitations are unknown but 
+for many of the applications, it will be limited to realistic
+values and data. Ex: dont use unrealisticly small pH values
+on the pH adjustment calculator. There is also rounding that
+assumed there is a realistic margin of error. Ex: the pH
+calculator rounds 5 gallons up to 20 liters from 18.9 incurring
+a 5.5% error wich is acceptable in home brewing.
+
+# Legal
+
     Copyright (C) 2017 Avery Norris and Cody Leytham
 
     This program is free software: you can redistribute it and/or modify
@@ -14,66 +69,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# ACBrewingCalculator
-Google Chrome extension that provides brewers with a brewing calculator
-for basic brewing aspects.  Brew on, friends!
 
-# Contribution, Building and Checkout
-To clone the repository for your own development: NEED MORE HEREEERERERERERERER
-
-# Installation
-Download the Code folder to your computer.  Open your Google Chrome web
-browser, and go to 'chrome://extensions'.  Check the box near the top
-to enter 'Developer Mode'.  Then click the box that says 'Load Unpacked 
-Extension', navigate to the 'Code' folder on your computer.  The extension
-will install
-
-ADD PACKED VERSION TO CHROME STORE???
-
-
--------------------------------------------------------------------------
-
-#Cody + Avery
-We have done some work on the layout of how are program will work. We
-pland to have this as an extension for chrome. We plan to have some 
-simple calculators work in a drop downlist and display in the drop down
-while larger/more complicated calculators will open a new window in a
-seperate website, use Javascript to interface with the user and run CGIs.
-
-# Third week update 
-------Cody Leytham------
-
-I am working on the .cpp files that will be converted into the .cgi files
-for the Javascript to invoke.
-
-I have currently wrote very little code but given the nature of my taks
- (writing the .cpp files for the calculators/convertors) right now I am
-doing more on researching and planning out the formulas. Once I get all
-of this down on paper it will probably take little time to code. It will
-mostly be getting data from a user, then doing the calculation and returning
-the values. So I have done more work that it appears in the files.
-
-------Avery Norris------
-
-I've got a basic framework for the chrome extension put together, and 
-have the html for the UI started. Still working on the HTML/CSS side of
-things to try and make the UI prettier.
-
--------------------------------------------------------------------------
-
-
-#Limitations
-This is an unfinished product and limitations are unknown but 
-for many of the applications, it will be limited to realistic
-values and data. Ex: dont use unrealisticly small pH values
-on the pH adjustment calculator. There is also rounding that
-assumed there is a realistic margin of error. Ex: the pH
-calculator rounds 5 gallons up to 20 liters from 18.9 incurring
-a 5.5% error wich is acceptable in home brewing.
-
-
-Languages
-	c++, Javascript, HTML.
 <div>Icons made by
  <a href="http://www.flaticon.com/authors/nas-ztudio" title="Nas Ztudio">Nas Ztudio</a> from 
  <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by 
