@@ -1,7 +1,7 @@
 /*
 File Name: shared.js
-Author: Cody Leytham		Date:8/1/17
-Purpose: helper functions for the in html javscript functions.
+Authors: Cody Leytham & Avery Norris	Date:8/1/17
+Purpose: helper functions for the  html javscript functions.
 */
 
 
@@ -109,7 +109,10 @@ function testEmpty(src){
 
 //These are the main functions used in the web pages. Chrome does not allow inline javascript
 
-document.getElementById("unitconv").addEventListener("click", unit_conv);
+var unitConvButton = document.getElementById("unitconv")
+if(unitConvButton) {
+    unitConvButton.addEventListener("click", unit_conv);
+}
 
 function unit_conv(){
   //getting the data from the html
@@ -153,6 +156,26 @@ function unit_conv(){
   }
 }
 
+//Functions for the IBU calculator
+
+var ibuButton = document.getElementById("IBU")
+if(ibuButton) {
+    ibuButton.addEventListener("click", ibu_calculate);
+}
+
+function ibu_calculate() {
+    //Get data from webpage
+    var oz_hops = document.getElementById("oz").value;
+    var alpha_acid = document.getElementById("aa").value;
+    var volume = document.getElementById("vol").value;
+    var time = document.getElementById("time").value;
+
+    //Run IBU calculations
+    
+
+    //Output result to page
+    document.getElementById("ibu_output").innerHTML = 1234;
+}
 
 
 
