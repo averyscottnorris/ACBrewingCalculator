@@ -188,6 +188,18 @@ function dryConv(mass, from, to){
 }
 
 
+/*
+function wetConv(vol, from, to){ 
+  if(from == 1 && to == 2)
+    res =  vol*.264; 
+  else if(from == 2 && to == 1)
+    res = 7;
+//    res = vol/.264;
+  else
+    return vol;
+  return (Math.trunc(res*100))/100;
+}
+*/
 
 function wetConv(vol, from, to){
   if(from == 1 && to == 2)
