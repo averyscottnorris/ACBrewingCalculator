@@ -7,7 +7,8 @@ brewing calculator for basic brewing aspects.  Brew on, friends!
 To install the ACBrewingCalculator Chrome extension:
 1. Download the 'Code' folder to your computer.  
 
-2. Open your Google Chrome web browser, and go to 'chrome://extensions'.
+2. Open your Google Chrome web browser, and go to: 
+<code>chrome://extensions</code>
 
 3. Check the box near the top to enter 'Developer Mode'.
 
@@ -26,16 +27,16 @@ To clone the repository for your own development:
 1. Click the "Fork" button to copy the repo to your Github account.
 
 2. Open a terminal and type the following:
-    $ git clone git@github.com:yourusername/ACBrewingCalculator
+<code>$ git clone git@github.com:yourusername/ACBrewingCalculator</code>
 
 3. Change into the repo with:
-    <code>$ cd ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator </code>
+<code>$ cd ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator</code>
 
 4. To connect your copy with the original repo:
-    $ git remote add ACBrewingCalculator 
+<code>$ git remote add ACBrewingCalculator</code>
 
-5. Make changes, and use 'git add' and 'git commit' to finalize those changes. Use
-'git push' to publish your commits to your own github repo.
+5. Make changes, and use <code>git add</code> and <code>git commit</code> to finalize those changes. Use
+<code>git push</code> to publish your commits to your own github repo.
 
 6. On your own github copy of the repo, you may use the "Pull Request" button to
 offer your changes to the original ACBrewingCalculator repo.  Please provide a 
