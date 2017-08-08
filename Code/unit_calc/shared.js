@@ -3,6 +3,10 @@ File Name: shared.js
 Author: Cody Leytham		Date:8/1/17
 Purpose: helper functions for the in html javscript functions.
 */
+
+
+//helper functions used in all many files
+
 function isFloat(src){
 //this will determine if the input is a floating point number
   var dec;
@@ -101,3 +105,56 @@ function testEmpty(src){
   }
   return 0;
 }
+
+
+//These are the main functions used in the web pages. Chrome does not allow inline javascript
+
+document.getElementById("unitconv").addEventListener("click", unit_conv);
+
+function unit_conv(){
+  //getting the data from the html
+  var value = document.getElementById("g1").value; 
+  var gf1 = document.getElementById("gf1").value; 
+  var gt1 = document.getElementById("gt1").value;
+  var fname = document.getElementById('gf1').options[document.getElementById('gf1').selectedIndex].text;
+  var tname = document.getElementById('gt1').options[document.getElementById('gt1').selectedIndex].text;
+  var res = 1;
+  //this will check to make sure that the input is a float at most 10 long (decimal included).
+  var check = scrub(value, 10);
+  //if the check does not return an error, then checking if it is positive.
+  if(check == 0){
+    if(value > 0){
+      //if the there is no error and it is a positive numer, doing the calculations and returning the results.
+      res = dryConv(value, gf1, gt1);
+      document.getElementById("grain1").innerHTML = value + " " + fname + " is " + res + " " + tname;
+    }
+    else if(value < 0)
+      alert("Please only use positive number. NO SPATIAL SINGULARITIES!!!.");
+  }
+
+  //getting the data from the html
+  var value = document.getElementById("l1").value; 
+  var fname = document.getElementById('lf1').options[document.getElementById('lf1').selectedIndex].text;
+  var tname = document.getElementById('lt1').options[document.getElementById('lt1').selectedIndex].text;
+  var lf1 = document.getElementById("lf1").value; 
+  var lt1 = document.getElementById("lt1").value;
+  var res = 1;
+  //this will check to make sure that the input is a float at most 10 long (decimal included).
+  var check = scrub(value, 10);
+  //if the check does not return an error, then checking if it is positive.
+  if(check == 0){
+    if(value > 0){
+      //if the there is no error and it is a positive numer, doing the calculations and returning the results.
+      res = wetConv(value, lf1, lt1);
+      document.getElementById("liquid1").innerHTML = value + " " + fname + " is" + res + " " + tname;
+    }
+    else if(value < 0)
+      alert("Please only use positive number. NO SPATIAL SINGULARITIES!!!.");
+  }
+}
+
+
+
+
+
+
