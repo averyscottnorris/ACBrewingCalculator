@@ -58,7 +58,7 @@ values and data. Ex: dont use unrealisticly small pH values
 on the pH adjustment calculator. There is also rounding that
 assumed there is a realistic margin of error. Ex: the pH
 calculator rounds 5 gallons up to 20 liters from 18.9 incurring
-a 5.5% error wich is acceptable in home brewing.
+a 5.5% error which is acceptable in home brewing.
 
 # Legal
 
