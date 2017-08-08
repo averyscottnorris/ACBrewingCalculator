@@ -170,8 +170,23 @@ function ibu_calculate() {
     var volume = document.getElementById("vol").value;
     var time = document.getElementById("time").value;
 
+<<<<<<< HEAD
+/*
+function wetConv(vol, from, to){ 
+  if(from == 1 && to == 2)
+    res =  vol*.264; 
+  else if(from == 2 && to == 1)
+    res = 7;
+//    res = vol/.264;
+  else
+    return vol;
+  return (Math.trunc(res*100))/100;
+}
+*/
+=======
     //Run IBU calculations
     
+>>>>>>> dfff23f42056ae57e02d1d6d6f10918c5f107eb1
 
     //Output result to page
     document.getElementById("ibu_output").innerHTML = 1234;
