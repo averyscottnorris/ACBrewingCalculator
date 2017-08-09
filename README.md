@@ -55,11 +55,23 @@ tutorial at: http://kbroman.org/github_tutorial/pages/fork.html
 # Limitations
 This is an unfinished product and limitations are unknown but 
 for many of the applications, it will be limited to realistic
-values and data. Ex: dont use unrealisticly small pH values
-on the pH adjustment calculator. There is also rounding that
-assumed there is a realistic margin of error. Ex: the pH
-calculator rounds 5 gallons up to 20 liters from 18.9 incurring
-a 5.5% error which is acceptable in home brewing.
+values and data some of wich are limits on the abilities of a computer.
+Ex: having unrealistically small differences in pH levels could cause
+the pH calculator to calculate unrealistically with floating point
+arithmetic.
+Rounding is done assuming the program is used to its intended purpose, home
+brewing. Ex: the hydrometer correction calculator is rounded to the 100ths
+1000ths place, the formula is theoretically more accurate but considering
+this is for home brewing, it is rounded to the accuracy of most hydometers.
+The accepted input is also narrowed to meet the laws of physics and logic
+and to make some equations work. Ex: The hydrometer only works for sample
+temperatures between 40 and 120 degrees becasue if your beer falls to 
+around 40 or below, the yeast will stop acting and below 120 to keep the 
+temp near the calibration temperature. The calibration range is also limited
+to match the hydrometers on the market.
+
+Other limitations come from software limitations of chrome. 
+
 
 # Legal
 
