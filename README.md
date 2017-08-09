@@ -30,10 +30,10 @@ To clone the repository for your own development:
 <code>$ git clone git@github.com:yourusername/ACBrewingCalculator</code>
 
 3. Change into the repo with:
-<code>$ cd ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator</code>
+<code>$ cd ACBrewingCalculator</code>
 
 4. To connect your copy with the original repo:
-<code>$ git remote add ACBrewingCalculator</code>
+<code>$ git remote add ACBrewingCalculator git://github.com/averyscottnorris/ACBrewingCalculator</code>
 
 5. Make changes, and use <code>git add</code> and <code>git commit</code> to finalize those changes. Use
 <code>git push</code> to publish your commits to your own github repo.
