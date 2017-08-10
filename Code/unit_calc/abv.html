@@ -23,14 +23,13 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 <title>ABV calculator </title>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="mystyle.css">
-<script type="text/javascript" src="shared.js"></script>
 </head>
 <body>
 <div class="bground">
 </div>
 <h1>Alcohol By Volume Estimator</h1>
 
-
+<!--
 <script>
 function abv_calc(){
 	//collecting data from the html
@@ -68,6 +67,8 @@ function abv_calc(){
 }
 
 </script>
+-->
+
 
   <br>
 <!--
@@ -81,11 +82,12 @@ function abv_calc(){
 	running the abv calculation and changing the id ans into the answer.
 -->
   <div class="hoiver_button"> 
-    <input id="clickMe"  type="button" value="clickMe" onclick="abv_calc();" />
+    <button id="ABV" type="button">Calculate</button>
   </div>
 </div>
   <div class="output">  
-    <p id="ans"></p>
+    <p id="ABV_ans"></p>
   </div>
+<script type="text/javascript" src="shared.js"></script>
 </body>
 </html>

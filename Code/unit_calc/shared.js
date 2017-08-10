@@ -509,3 +509,45 @@ function pH_diff(){
 	". <br><br> This calculation assumes it is a strong acid, Otherwise it may stop at a certian pH " +
 	 "(substance specific, for more information look up the pKa of your additive for pH restrictions).<br> ";
 }
+
+
+var ABVButton = document.getElementById("ABV")
+if(ABVButton) {
+    ABVButton.addEventListener("click", abv_calc);
+}
+
+
+function abv_calc(){
+	//collecting data from the html
+	var og = document.getElementById("og").value; 
+	var fg = document.getElementById("fg").value;
+	if(!isFloat(og)){
+		alert("The original gravity is an invalid number. Use . not , to divide the partial numbers.");
+		return 0;
+	}
+	if(!isFloat(fg)){
+		alert("The final gravity is an invalid number. Use . not , to divide the partial numbers.");
+		return 0;
+	}
+	if(!checkLen(og, 6)){
+		alert("The original gravity is too long of a number");
+		return 0;
+	}
+	if(!checkLen(fg, 6)){
+		alert("The final gravity is too long of a number");
+		return 0;
+	}
+	if(og > 2){
+		alert("Original gravity is to large of a number, below 2.0 please.");
+		return 0;
+	}
+	if(fg > 2){
+		alert("Final gravity is to large of a number, below 2.0 please.");
+		return 0;
+	}
+
+	var abv = (og - fg)*125*1.05;
+	abv = Math.round(abv*10)/10;	
+	//I could not find any official documantation of this formula but it seems to be widely used.  
+	document.getElementById("ABV_ans").innerHTML = "You can expect a ABV of " + abv + "%.";
+}
