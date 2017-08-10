@@ -26,7 +26,7 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-<div class="bground">
+  <div class="bground">
 </div>
 
 <h1>hydrometer correction calculator</h1>
@@ -36,84 +36,6 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 	rounding error that should be irrelevent in home brewing.
 
 -->
-
-
-
-<!--
-<script>
-function hydro_corr(){
-/*-
-	The equation for the correction was taken from a post in brewery.org/librry/HydromCorr0992.html by Christopher Lyons who cited
-	the "Handbooks of chemistry and Physics (CRC)". I could not find the equation (i found a 2400 page pdf) in the book but this
-	posted equation's outputs are close to charts i have found (possible rounding errors in the 10,000ths place, so very small
-	difference and the equation agrees with other ones I have found on the internet.
-*/
-	//getting the data from the html
-  var temp = document.getElementById("temp").value; 
-  var cal = document.getElementById("cal").value;
-  var grav = document.getElementById("grav").value;
-  testEmpty(temp);
-  testEmpty(cal);
-  testEmpty(grav);
-  
-  var c = document.getElementById("c").checked; 
-  var f = document.getElementById("f").checked; 
-    //validating information, 0 will mean failure since positive numbers are desired output.
-  if(c == true && f == true){
-    //alerting the user that they have chosen both celsius an fahrenheit as their units.
-    if(temp == -40)
-      alert("OK this temperature is the same in fahrenheit and celsius, but we both know this beer would be a solid at that point....liquids only...");
-    else
-      alert("I cant...it's impossible to use two different units for the temperature...");
-    return 0;
-  }
-  else if(!isInt(temp)){
-    alert("Temp is invalid, please enter a whole numbmer.");
-    return 0;
-  }
-  else if(!isInt(cal)){
-    alert("Calibration is not a number.");
-    return 0;
-  }
-  else if(!isFloat(grav)){
-    alert("Gravity is not a numer.");
-    return 0;
-  }
-  else if(temp < 40 || temp > 120){
-    alert("Please choose a temperature between 40F and 120F degrees");
-    return 0;
-  }
-  else if(cal < 50 || cal > 75){
-    alert("Hydrometers are usually calibrated in the 50F-70F range, I cannot use ths calibration.");
-    return 0;
-  }
-  else if(!checkLen(grav,15)){
-    alert("The gravity is not a valid number");
-    return 0;
-  }
-  else if(c != true && f != true){
-    //alerting the user that they have used neither celsius or farhenheit as their units
-    alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you...");
-    return 0;
-  }
-  else{
-    if(c == true)
-      temp = (temp *(9/5)+32);
-    
-    grav = grav * (1.00130346 -.000134722124 * temp + .00000204052596 * Math.pow(temp,2) - .00000000232820948 * Math.pow(temp,3)) / (1.0013036 - .000134722124 * cal + .00000204052596 * Math.pow(cal, 2) - .0000000023280948 * Math.pow(cal, 3));
-    grav = grav*1000;
-    grav = Math.round(grav);
-    grav = grav/1000;
-    document.getElementById("hydro_ans").innerHTML ="The corrected (rounded to the 1/1000th place) is  " +  grav;
-    return grav;
-  }
-  //incase i missed some cases
-  return 0;
-}
-
-</script>
--->
-
 
 <div class="input">
   <br>
@@ -136,7 +58,7 @@ function hydro_corr(){
 
 </div>
 <div class="output">
-<p id="hydro_ans"></p>
+  <p id="hydro_ans"></p>
 </div>
 <script type="text/javascript" src="shared.js"></script>
 </body>
