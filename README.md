@@ -64,6 +64,20 @@ tutorial at: http://kbroman.org/github_tutorial/pages/fork.html
 
 
 # Limitations
+Please note that this product is a work-in-progress.  It has not been
+as extensively bug-tested as we would like.  For many of the applications,
+there are limits to the range of numbers that the calculators will accept;
+additionally, rounding in some of the calculations may cause small
+percentages of error in the final answer.
+
+It is our belief that homebrew is not an exact science, and small error
+margins will not make a noticeable difference in the end product.
+
+If you find any bugs or errors, please email them to our bug tracker
+at: acbrewbug@hotmail.com
+
+
+<!--
 This is an unfinished product and limitations are unknown but 
 for many of the applications, it will be limited to realistic
 values and data some of wich are limits on the abilities of a computer.
@@ -82,6 +96,8 @@ temp near the calibration temperature. The calibration range is also limited
 to match the hydrometers on the market.
 
 Other limitations come from software limitations of chrome. 
+
+-->
 
 
 # Legal
