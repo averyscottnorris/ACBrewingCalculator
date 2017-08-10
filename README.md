@@ -29,8 +29,6 @@ the folder you unzipped on your computer.
 5. The extension will install, and can be accessed by the icon in the
 top-right of the browser bar.
 
-------ADD PACKED VERSION TO CHROME STORE???------
-
 
 # Forking and Contribution
 To clone the repository for your own development:
