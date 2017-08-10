@@ -5,7 +5,18 @@ brewing calculator for basic brewing aspects.  Brew on, friends!
 
 # Installation
 To install the ACBrewingCalculator Chrome extension:
-1. Download the 'Code' folder to your computer.  
+
+1. Navigate to: https://chrome.google.com/webstore/detail/acbrewingcalculator/hlacbngjamklodhmjgpfdipioipmemkn?hl=en-US
+
+2. Click "Add To Chrome" in the top-right.
+
+3. The extension will now download and install.
+
+Alternatively, you can do a manual installation.  NOTE: This method will not
+automatically update, and will require a little more work on your part.
+
+1. Download the files to your computer by clicking "Clone or Download" and
+choose "Download ZIP". Unzip the folder once it has downloaded. 
 
 2. Open your Google Chrome web browser, and go to: 
 <code>chrome://extensions</code>
@@ -13,7 +24,7 @@ To install the ACBrewingCalculator Chrome extension:
 3. Check the box near the top to enter 'Developer Mode'.
 
 4. Then click the box that says 'Load Unpacked Extension', and navigate to
-the 'Code' folder on your computer.
+the folder you unzipped on your computer.
 
 5. The extension will install, and can be accessed by the icon in the
 top-right of the browser bar.
