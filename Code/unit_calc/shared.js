@@ -262,7 +262,250 @@ function ibu_calculate() {
     return true;
 }
 
+var hydroButton = document.getElementById("hydro")
+if(hydroButton) {
+    hydroButton.addEventListener("click", hydro_corr);
+}
+
+
+function hydro_corr(){
+/*-
+	The equation for the correction was taken from a post in brewery.org/librry/HydromCorr0992.html by Christopher Lyons who cited
+	the "Handbooks of chemistry and Physics (CRC)". I could not find the equation (i found a 2400 page pdf) in the book but this
+	posted equation's outputs are close to charts i have found (possible rounding errors in the 10,000ths place, so very small
+	difference and the equation agrees with other ones I have found on the internet.
+*/
+	//getting the data from the html
+  var temp = document.getElementById("temp").value; 
+  var cal = document.getElementById("cal").value;
+  var grav = document.getElementById("grav").value;
+  testEmpty(temp);
+  testEmpty(cal);
+  testEmpty(grav);
+  
+  var c = document.getElementById("c").checked; 
+  var f = document.getElementById("f").checked; 
+    //validating information, 0 will mean failure since positive numbers are desired output.
+  if(c == true && f == true){
+    //alerting the user that they have chosen both celsius an fahrenheit as their units.
+    if(temp == -40)
+      alert("OK this temperature is the same in fahrenheit and celsius, but we both know this beer would be a solid at that point....liquids only...");
+    else
+      alert("I cant...it's impossible to use two different units for the temperature...");
+    return 0;
+  }
+  else if(!isInt(temp)){
+    alert("Temp is invalid, please enter a whole numbmer.");
+    return 0;
+  }
+  else if(!isInt(cal)){
+    alert("Calibration is not a number.");
+    return 0;
+  }
+  else if(!isFloat(grav)){
+    alert("Gravity is not a numer.");
+    return 0;
+  }
+  else if(temp < 40 || temp > 120){
+    alert("Please choose a temperature between 40F and 120F degrees");
+    return 0;
+  }
+  else if(cal < 50 || cal > 75){
+    alert("Hydrometers are usually calibrated in the 50F-70F range, I cannot use ths calibration.");
+    return 0;
+  }
+  else if(!checkLen(grav,15)){
+    alert("The gravity is not a valid number");
+    return 0;
+  }
+  else if(c != true && f != true){
+    //alerting the user that they have used neither celsius or farhenheit as their units
+    alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you...");
+    return 0;
+  }
+  else{
+    if(c == true)
+      temp = (temp *(9/5)+32);
+    
+    grav = grav * (1.00130346 -.000134722124 * temp + .00000204052596 * Math.pow(temp,2) - .00000000232820948 * Math.pow(temp,3)) / (1.0013036 - .000134722124 * cal + .00000204052596 * Math.pow(cal, 2) - .0000000023280948 * Math.pow(cal, 3));
+    grav = grav*10000;
+    grav = Math.round(grav);
+    grav = grav/10000;
+    document.getElementById("hydro_ans").innerHTML ="The corrected (rounded to the 1/10000th place) is  " +  grav;
+    return grav;
+  }
+  //incase i missed some cases
+  return 0;
+}
+
+
+var primeButton = document.getElementById("prime")
+if(primeButton) {
+    primeButton.addEventListener("click", carbCalc);
+}
+
+
+function carbCalc(){
+  //getting the data from the html
+  var carbTarg = document.getElementById("carbTarg").value; 
+  var vol = document.getElementById("vol").value; 
+  var temp = document.getElementById("temp").value; 
+  var c = document.getElementById("c").checked; 
+  var f = document.getElementById("f").checked;
+  
+  if(!isFloat(carbTarg)){
+    alert("The target carbonation does not appear to be a number.");
+    return 0; 
+  }
+  if(!isInt(vol) || !isInt(temp)){
+    alert("Please whole numer values for volume and temperature please.");
+    return 0;
+  }  
+  if(carbTarg == 0){
+    alert("Your target is flat beer...you need no sugar additions.");
+    return 0;
+  }
+  if(carbTarg < 0){
+    alert("You cannot have negative carbonation in the beer, PHYSICS PEOPLE!!! PHYSICS!!!!.");
+    return 0;
+  }
+
+  if(vol <= 0){
+    alert("You need to have some volume of beer.");
+    return 0;
+  }
+  
+  if(temp < 40 || temp > 120){
+    alert("Please test your beer between the temperatures of 40F and 120F.");
+    return 0;
+  }
+
+  if(c != true && f != true){
+    //alerting the user that they have used neither celsius or farhenheit as their units
+    alert("...so, not celsius, not fahrenheit...Im not doing kelvin for you...");
+    return 0;
+  }
+  else if(c == true && f == true){
+    if(temp == -40){
+      alert("Yeah, yeah, fahrenheit and celsius are the same right not but do you realy want to work with a solid?");
+      return 0;
+    }
+    else{
+      alert("both temps...No...celcius and fahrenheit are only the same at -40....are you in that cold of climate?");
+      return 0;
+    }
+  }
+  else
+    if(c == true)
+      temp = (temp *(9/5)+32);
+
+  sugar = 15.195*vol*(carbTarg - 3.0378 + .050062 * temp - .00026555 * Math.pow(temp, 2));
+  sugar = Math.round(sugar); 
+  if(sugar <= 0){
+    alert("It seems that your target amount of CO2 is less that or equal to the initial for this temperature, please refer to an CO2 solubility chart.");
+    return 0;
+  }
+  document.getElementById("prime_ans").innerHTML ="You will need to add " +  sugar + " grams of corn sugar (dextrose) to get this.**";
+  return sugar;
+}
+
+
+var phButton = document.getElementById("pH")
+if(phButton) {
+    phButton.addEventListener("click", pH_diff);
+}
 
 
 
+function pH_diff(){
+  var o_ph = document.getElementById("o_ph").value; 
+  var t_ph = document.getElementById("t_ph").value;
+  var m_mass = document.getElementById("m_mass").value;
+  var h_count = document.getElementById("h_count").value;
 
+  
+  if(!isFloat(o_ph)){
+    alert("The original pH is not a valid number format.");
+    return;
+  }
+  if(!isFloat(t_ph)){
+    alert("The target pH is not a valid number format.");
+    return;
+  }
+  if(!isFloat(m_mass)){
+    alert("The Molar Mass pH is not a valid number format.");
+    return;
+  }
+
+  if(!isInt(h_count)){
+    alert("The hydrogen number is invalid, whole numbers please.");
+    return;
+  }
+
+  if(t_ph > o_ph){
+    alert("This calculator is designed for lowering pH not raising it.");
+    return;
+  } 
+
+  if(o_ph < 0){
+	alert("Only positive pH please. The original pH is face melting low, contact your water company.");
+	return;
+  }
+  
+  if(t_ph < 0){
+	alert("Only positive pH please, the target pH is definatly not safe for human consumption.");
+	return;
+  }
+
+  if(o_ph > 14){
+	alert("That is a very basic original pH. The original pH is face melting high, contact your water company.");
+	return;
+  }
+  if(t_ph > 14){
+	alert("The target pH is to high. it is not safe for human consumption");
+	return;
+  }
+
+  if(testEmpty(o_ph))
+    return;
+  if(testEmpty(t_ph))
+    return;
+  if(testEmpty(m_mass))
+    return;
+  if(testEmpty(h_count))
+    return;
+  if(m_mass <= 0){
+	alert("If an item has molar mass less than or equal to 0 that implies it weights nothing, im not doing quantum physics here.");
+	return;
+  }  	 
+  if(h_count == 0){
+	alert("If this thing has to hydrogen then its not an acid.");
+	return;
+  }
+
+/*
+	CALCULATION EXPLENATION. 
+	FIRST: DETERMINING HOW MANY MOLES OF BASE I WILL NEED TO NEUTRALIZE. MOLES H+ = 10^(-pH). SO
+	TARGET pH - ORIGINAL pH = NUMBER OF H+ TO GET TO HE DESIRED pH.
+	
+	SECOND: DETERMINING HOW MANY MOLES OF THE ADDITIVE IS NEEDED TO NEUTRALIZE THE pH. SINCE ONE 
+	MOLE OF THE ADDITIVE CAN HAVE MORE THAN ONE H+ THUS ONE MORE OF ADDITIVE NEUTRALIZING MORE 
+	THAN ONE MOLE OF BASE, DIVIDE THE NEEDED MOLES OF H+ BY HOW MANY H+ THE ADDITIVE HAS. WITH THIS
+	A 1 TO 1 RATIO OF MOLES ADDITIVE TO H+ NEEDED IS DETERMINED. MULTIPLYING THE 1 TO 1 RATIO BY
+	THE MOLAR MASS OF THE ADDITIVE GETS US THE MASS OF THE ADDITIVE NEEDED.
+	
+	THIRD: THE MOLARITY OF SOLUTIONS TO ADD IS SMIMPLE CONVERSIONS OF MOLES/LITERS = MOLARITY.
+	EQUIVELENTLY SUBSTITUTING CHANGE IN PLACE OF MOLES YOU GET CHANGE CHANGE/MOLARITY = LITERS
+*/	
+	var change = (Math.pow(10, -t_ph)) - (Math.pow(10, -o_ph));
+	var mass = (change/h_count)* m_mass;
+//	THIS WILL CALCULATE HOW MANY ML OF .01M CONCENTRATION YOU WILL NEED TO GET TO THE pH !!PER LITER!!
+//	.01 is the molarity so that is (change/molarity but since this is usually measured in ml, dividing by .001
+	var dilute_vol = (change/.00001);
+	
+	document.getElementById("pH_ans").innerHTML ="You need " +  mass + " pure grams of your additive per liter of wort/water or " + dilute_vol + " ml of .01M (molarity)" +
+	" solution of your chosen additive. If the molarity is different on your additive just miltiply this volume by 10 for every decimal to the right or divide by 10 " +
+	"for every dicimal place to the left your sample is from .01. This is also PER LITER!" + 
+	". <br><br> This calculation assumes it is a strong acid, Otherwise it may stop at a certian pH " +
+	 "(substance specific, for more information look up the pKa of your additive for pH restrictions).<br> ";
+}

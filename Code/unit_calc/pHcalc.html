@@ -25,7 +25,6 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="mystyle.css">
-<script type="text/javascript" src="shared.js"></script>
 <title>ACBrewing pH correction calculator </title>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
@@ -35,82 +34,6 @@ Copyright (c) 2017 Avery Norris and Cody Leytham
 
 <h1>&nbsp &nbsp pH reduction calculator &nbsp &nbsp</h1>
 
-<script>
-function pH_diff(){
-  var o_ph = document.getElementById("o_ph").value; 
-  var t_ph = document.getElementById("t_ph").value;
-  var m_mass = document.getElementById("m_mass").value;
-  var h_count = document.getElementById("h_count").value;
-  if(t_ph > o_ph){
-    alert("This calculator is designed for lowering pH not raising it.");
-    return;
-  }
-    
-  if(!isFloat(o_ph)){
-    alert("The original pH is not a valid number format.");
-    return;
-  }
-  if(!isFloat(t_ph)){
-    alert("The target pH is not a valid number format.");
-    return;
-  }
-  if(!isFloat(m_mass)){
-    alert("The Molar Mass pH is not a valid number format.");
-    return;
-  }
-  if(!isInt(h_count)){
-    alert("The hydrogen number is invalid, whole numbers please.");
-    return;
-  }
-  if(testEmpty(o_ph))
-    return;
-  if(testEmpty(t_ph))
-    return;
-  if(testEmpty(m_mass))
-    return;
-  if(testEmpty(h_count))
-    return;
-  if(m_mass <= 0){
-	alert("If an item has molar mass less than or equal to 0 that implies it weights nothing, im not doing quantum physics here.");
-	return;
-  }
-  	 
-  if(h_count == 0){
-	alert("If this thing has to hydrogen then its not an acid.");
-	return;
-  }
-  if(o_ph < 0 || t_ph < 0){
-	alert("Only positive pH please");
-  }
-  
-/*
-	CALCULATION EXPLENATION. 
-	FIRST: DETERMINING HOW MANY MOLES OF BASE I WILL NEED TO NEUTRALIZE. MOLES H+ = 10^(-pH). SO
-	TARGET pH - ORIGINAL pH = NUMBER OF H+ TO GET TO HE DESIRED pH.
-	
-	SECOND: DETERMINING HOW MANY MOLES OF THE ADDITIVE IS NEEDED TO NEUTRALIZE THE pH. SINCE ONE 
-	MOLE OF THE ADDITIVE CAN HAVE MORE THAN ONE H+ THUS ONE MORE OF ADDITIVE NEUTRALIZING MORE 
-	THAN ONE MOLE OF BASE, DIVIDE THE NEEDED MOLES OF H+ BY HOW MANY H+ THE ADDITIVE HAS. WITH THIS
-	A 1 TO 1 RATIO OF MOLES ADDITIVE TO H+ NEEDED IS DETERMINED. MULTIPLYING THE 1 TO 1 RATIO BY
-	THE MOLAR MASS OF THE ADDITIVE GETS US THE MASS OF THE ADDITIVE NEEDED.
-	
-	THIRD: THE MOLARITY OF SOLUTIONS TO ADD IS SMIMPLE CONVERSIONS OF MOLES/LITERS = MOLARITY.
-	EQUIVELENTLY SUBSTITUTING CHANGE IN PLACE OF MOLES YOU GET CHANGE CHANGE/MOLARITY = LITERS
-*/	
-	var change = (Math.pow(10, -t_ph)) - (Math.pow(10, -o_ph));
-	var mass = (change/h_count)* m_mass;
-//	THIS WILL CALCULATE HOW MANY ML OF .01M CONCENTRATION YOU WILL NEED TO GET TO THE pH !!PER LITER!!
-//	.01 is the molarity so that is (change/molarity but since this is usually measured in ml, dividing by .001
-	var dilute_vol = (change/.00001);
-	
-	document.getElementById("ans").innerHTML ="You need " +  mass + " pure grams of your additive per liter of wort/water or " + dilute_vol + " ml of .01M (molarity)" +
-	" solution of your chosen additive. If the molarity is different on your additive just miltiply this volume by 10 for every decimal to the right or divide by 10 " +
-	"for every dicimal place to the left your sample is from .01. This is also PER LITER!" + 
-	". <br><br> This calculation assumes it is a strong acid, Otherwise it may stop at a certian pH " +
-	 "(substance specific, for more information look up the pKa of your additive for pH restrictions).<br> ";
-}
-
-</script>
 <!--
 	collecting user input
 -->
@@ -134,17 +57,16 @@ This is getting the data from the user, variable names are descibed in the line 
   </p>
   </div>
 <!--
-	this runs the calculation and return the asnwer in the id ans
+	this runs the calculation and return the asnwer in the id pH_ans
 -->
   <div class="hover_button">
-    <input id="clickMe" class="button"  type="button" value="Calculate" onclick="pH_diff();" />
+    <button id="pH" type="button">Calculate</button>
   </div>
-
 </div>
 </form>
 <div class="output">
-  <p id="ans"></p>
+  <p id="pH_ans"></p>
 </div>
-
+<script type="text/javascript" src="shared.js"></script>
 </body>
 </html>

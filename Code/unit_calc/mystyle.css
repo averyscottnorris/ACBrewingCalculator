@@ -1,7 +1,4 @@
 .bground{
-/*
-	position: absolute;
-*/
 	position: fixed;
 	top:0;
 	left:0;
@@ -15,17 +12,14 @@
 
 
 body{
-	border: dashed;
 	width: 80%;
 }
 
 h1{
+/*	font-family: "Calligaffitti", "Blackadder ITC", "Times New Roman", Times, Serif;  */
 	font-family: "Blackadder ITC", "Times New Roman", Times, Serif;
 	font-size: 40px;
-	color: black;
-/*
-	padding: 1em 2em 1em 1em; 
-*/
+	color: inset;
 
 }
 
@@ -35,7 +29,7 @@ p{
 
 .input{
 
-	font-family: "Baskerville Old Face", "Times New Roman", Times, Serif;
+	font-family: "Calligraffitti", "Baskerville Old Face", "Times New Roman", Times, Serif;
 	z-index:1;
 	text-align:center;
 	margin:auto;
@@ -43,7 +37,6 @@ p{
 	position: absolute;
 	color: black;
 	float: left;
-	border: solid;
 }
 
 .output{

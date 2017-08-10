@@ -1,0 +1,66 @@
+<!--
+File Name: prime.html
+Author: Cody Leytham	date: 8/7/17
+purpose: To calculate the amount of sugar needed to carbonation calculator.
+Copyright (c) 2017 Avery Norris and Cody Leytham
+
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ If you find any error or bug, please send feedback to acbrewbug@hotmail.com
+-->
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>ACBrewing Priming sugar calculator</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body>
+<div class="bground">
+</div>
+
+<h1>&nbsp&nbspPriming sugar-carbonation calculator</h1>
+
+<form>
+<div class="input">
+  <br>
+  Desired cabonation(in volumes): <input type="int" id="carbTarg" name="carbTarg" value="0"> 
+  <br>
+  Volume of beer (in gallons): <input type="int" id="vol" name="vol" value="0"> 
+  <br>
+  Temperature: <input type="int" id="temp" name="temp" value="0"> 
+  <br>
+  celsius: <input type="checkbox" id="c">
+  <br>
+  fahrenheit: <input type="checkbox" id="f">
+  <br>
+  <div class="note">
+  *The formula used will determine your initial carbonation based on CO2s solubility vs temperature chart.
+  <br>
+  **corn sugar is fully consumed by the yeast, this is not true for all sugars. For other sugars, find what percent of it is consumped and divide the grams of dextrose by that percent to determine how many grams of that sugar you need.
+  </div>
+</form>
+<!--
+	this is runing the calculation and returning the answer in the id ans
+-->
+<div class="hover_button">
+    <button id="prime" type="button">Calculate</button>
+</div>
+
+</div>
+<div class="output">
+<p id="prime_ans"></p>
+</div>
+<script type="text/javascript" src="shared.js"></script>
+</body>
+</html>

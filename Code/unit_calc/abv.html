@@ -38,25 +38,33 @@ function abv_calc(){
 	var fg = document.getElementById("fg").value;
 	if(!isFloat(og)){
 		alert("The original gravity is an invalid number. Use . not , to divide the partial numbers.");
-		return;
+		return 0;
 	}
 	if(!isFloat(fg)){
 		alert("The final gravity is an invalid number. Use . not , to divide the partial numbers.");
-		return;
+		return 0;
 	}
-	if(!checkLen(og, 7)){
+	if(!checkLen(og, 6)){
 		alert("The original gravity is too long of a number");
-		return;
+		return 0;
 	}
-	if(!checkLen(fg, 7)){
+	if(!checkLen(fg, 6)){
 		alert("The final gravity is too long of a number");
-		return;
+		return 0;
 	}
+	if(og > 2){
+		alert("Original gravity is to large of a number, below 2.0 please.");
+		return 0;
+	}
+	if(fg > 2){
+		alert("Final gravity is to large of a number, below 2.0 please.");
+		return 0;
+	}
+
 	var abv = (og - fg)*125*1.05;
-	abv = Math.round(abv*1000)/1000;
-	
+	abv = Math.round(abv*10)/10;	
 	//I could not find any official documantation of this formula but it seems to be widely used.  
-	document.getElementById("ans").innerHTML = "(" +  og + " - " + fg + ")*125*1.05 = " + abv + "% ABV.";
+	document.getElementById("ans").innerHTML = "You can expect a ABV of " + abv + "%.";
 }
 
 </script>
