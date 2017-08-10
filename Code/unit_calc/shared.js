@@ -1,9 +1,27 @@
 /*
-   File Name: shared.js
-   Authors: Cody Leytham & Avery Norris	Date:8/1/17
-   Purpose: helper functions for the  html javscript functions.
-   */
+File Name: shared.js
+Authors: Cody Leytham & Avery Norris	Date:8/1/17
+Purpose: To hold Javascript for the html.
+contains both helper functions to be shared among all html and also
+what would be inline javascript but is put in an external file to
+comply with Chorme requirements.
 
+Copyright (c) 2017 Avery Norris and Cody Leytham
+
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ If you find any error or bug, please send feedback to acbrewbug@hotmail.com
+
+*/
 
 //helper functions used in all many files
 
@@ -503,11 +521,7 @@ function pH_diff(){
 //	.01 is the molarity so that is (change/molarity but since this is usually measured in ml, dividing by .001
 	var dilute_vol = (change/.00001);
 	
-	document.getElementById("pH_ans").innerHTML ="You need " +  mass + " pure grams of your additive per liter of wort/water or " + dilute_vol + " ml of .01M (molarity)" +
-	" solution of your chosen additive. If the molarity is different on your additive just miltiply this volume by 10 for every decimal to the right or divide by 10 " +
-	"for every dicimal place to the left your sample is from .01. This is also PER LITER!" + 
-	". <br><br> This calculation assumes it is a strong acid, Otherwise it may stop at a certian pH " +
-	 "(substance specific, for more information look up the pKa of your additive for pH restrictions).<br> ";
+	document.getElementById("pH_ans").innerHTML ="You need " +  mass + " pure grams of your additive per liter of wort/water or " + dilute_vol + " ml of .01M (molarity)" + " solution of your chosen additive.";
 }
 
 
