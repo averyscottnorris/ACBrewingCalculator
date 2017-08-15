@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     
-    "name": "ACBrewingCalculator",
-    "description": "This extension provides an easy-access calculator for brewers",
-    "version": "0.1",
+    "name": "AC Brewing Calculator",
+    "description": "This extension provides an easy-access calculator for brewers, including alcohol and IBU calculations, hydrometer corrections, and more!",
+    "version": "0.2",
     
     "browser_action": {
         "default_icon": "icon16.png",
