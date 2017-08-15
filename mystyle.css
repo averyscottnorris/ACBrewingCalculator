@@ -1,3 +1,28 @@
+/*
+ * Filename: mystyle.css
+ * Author: Cody Letham
+ * This file provides CSS styling for the ACBrewingCalculator's pages
+ *
+ * Copyright (c) 2017 Avery Norris and Cody Leytham
+ *
+ *
+                      GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+ All images used on this site were either advertised as free to use or
+ permission from the one claiming onwnership gave permission. If you 
+ claim to own any of the images, them please contact us at acbrewbug@hotmail.com
+ 
+ * 
+ *
+ *
+ */
+
+
 .bground{
 	position: fixed;
 	top:0;
