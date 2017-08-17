@@ -8,7 +8,8 @@ accessable through your Chrome browser at the click of a button.
 
 Brew on, friends!
 
-To contact the devs, you may send an email to either: avnorris@pdx.edu or cleytham@pdx.edu
+Developed and Copyright (c) 2017 by Avery Norris and Cody Leytham
+To contact the authors, you may send an email to either: avnorris@pdx.edu or cleytham@pdx.edu
 
 
 # Installation
