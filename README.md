@@ -110,7 +110,7 @@ Other limitations come from software limitations of chrome.
 
 # Legal
 
-By downloading and/or using this software, you agree to and and all
+By downloading and/or using this software, you agree to any and all
 terms listed here and in the attached GPL license.  The use of this
 software is strictly at your own risk.  ACBrewingCalculator and its
 developers assume no liability for any use or misuse of this software
