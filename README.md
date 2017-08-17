@@ -2,6 +2,8 @@
 Google Chrome extension that provides brewers with a easy-to-access 
 brewing calculator for basic brewing aspects.  Brew on, friends!
 
+To contact the devs, you may send an email to either: avnorris@pdx.edu or cleytham@pdx.edu
+
 
 # Installation
 To install the ACBrewingCalculator Chrome extension:
