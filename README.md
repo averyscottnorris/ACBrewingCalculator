@@ -1,6 +1,12 @@
 # ACBrewingCalculator
-Google Chrome extension that provides brewers with a easy-to-access 
-brewing calculator for basic brewing aspects.  Brew on, friends!
+ACBrewingCalculator is a Google Chrome extension that provides
+brewers with a easy-to-access brewing calculator for basic brewing
+calculations.  It currently provides support for: ABV calculation,
+IBU calculation, hydrometer adjustment, priming sugar calculation,
+pH calculations, and unit conversions. All of these are easily
+accessable through your Chrome browser at the click of a button.
+
+Brew on, friends!
 
 To contact the devs, you may send an email to either: avnorris@pdx.edu or cleytham@pdx.edu
 
